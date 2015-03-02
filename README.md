@@ -1,7 +1,7 @@
 Login Activity
 ================
 
-This project is a proof of concept, used to generate a report of login activities. Using a provided json file, typically stored in the [`data/`](https://github.com/jeff1evesque/login-activity/blob/master/data/) subdirectory, a login-activity report is generated as a webpage.
+This project is a proof of concept, used to generate a report of login activities. Using a provided json file, typically stored in the [`/data/`](https://github.com/jeff1evesque/login-activity/blob/master/data/) subdirectory, a login-activity report is generated as a webpage.
 
 Specifically, the web log-activity report will contain the following metrics:
 
@@ -22,6 +22,8 @@ In addition to the web log-activity report, a downloadable csv link will be prov
 - count of failed log-ins
 
 **Note:** the csv file will also contain a header row, labeling each of the above metric.
+
+**Note:** this project may later implement the python `request.get()` method, instead of directly parsing a json-file within the web-application `/data/` subdirectory.
 
 ## Installation
 
