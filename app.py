@@ -12,8 +12,8 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/login_report/', methods=['POST', 'GET'])
-def login_report():
+@app.route('/generate_report/', methods=['POST', 'GET'])
+def generate_report():
   if request.method == 'POST':
   # local variables
   files = None
