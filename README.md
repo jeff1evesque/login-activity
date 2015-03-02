@@ -25,7 +25,7 @@ In addition to the web log-activity report, a downloadable csv link will be prov
 
 **Note:** the csv file will also contain a header row, labeling each of the above metric.
 
-**Note:** this project may later implement the python `request.get()` method, instead of directly parsing a json-file within the web-application `/data/` subdirectory.
+**Note:** this project may later implement the python [`requests.get()`](http://docs.python-requests.org/en/latest/user/quickstart/#json-response-content) method, instead of directly parsing a json-file within the web-application [`/data/`](https://github.com/jeff1evesque/login-activity/blob/master/data/) subdirectory.
 
 ## Installation
 
