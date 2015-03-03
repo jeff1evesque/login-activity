@@ -16,13 +16,9 @@ def index():
 @app.route('/generate-report/', methods=['POST', 'GET'])
 def generate_report():
   if request.method == 'POST':
-    # local variables
-    files = None
 
-    # process data
+    # process, and return report
     report = process_report()
-
-    # return report
     return json.loads(report)
 
 # Execute: run application directly, instead of import
