@@ -16,7 +16,6 @@ def index():
 @app.route('/generate-report/', methods=['POST', 'GET'])
 def generate_report():
   if request.method == 'POST':
-
     # process, and return report
     report = process_report()
     return json.loads(report)
