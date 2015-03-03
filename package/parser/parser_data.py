@@ -8,8 +8,13 @@
 #        appended to an overall restructured data.
 
 ## Class: Parse_Data, explicitly inherit 'new-style' class
+#
+#  @self.fp, a json file-object, representing the supplied dataset
 class Parse_Data(object):
 
   ## constructor:
   def __init__(self, fp):
-    self.json_fp = fp
+    self.fp = fp
+
+  ## restructure: iterate over json file-object, and build a dict representation
+  def restructure(self):
