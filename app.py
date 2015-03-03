@@ -24,7 +24,7 @@ def generate_report():
     settings = request.form
 
     # process data
-    sender = Process_Report(settings, files)
+    sender = Load_Data(settings, files)
     report = sender.get_report()
 
     # return report
