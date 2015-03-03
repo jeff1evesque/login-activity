@@ -6,3 +6,10 @@
 #  Note: during each iteration of parsing the supplied file-object, the
 #        sub-dataset is validated against an imported jsonschema, then
 #        appended to an overall restructured data.
+
+## Class: Parse_Data, explicitly inherit 'new-style' class
+class Parse_Data(object):
+
+  ## constructor:
+  def __init__(self, fp):
+    self.json_fp = fp
