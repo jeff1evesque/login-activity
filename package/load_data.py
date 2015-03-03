@@ -17,7 +17,7 @@ def process_report():
       restructured_data = sent_file.restructure()
 
       # generate report
-      if restructured_data['data']:
+      if restructured_data:
         sent_data = Generate_Data(restructured_data)
         report    = sent_data.generate_report()
       else: return False
