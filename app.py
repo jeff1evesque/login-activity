@@ -29,3 +29,9 @@ def generate_report():
 
     # return report
     return json.loads(report)
+
+# Execute: run application directly, instead of import
+if __name__ == '__main__':
+  app.run(
+  debug=True
+)
