@@ -15,17 +15,17 @@ def index():
 @app.route('/generate_report/', methods=['POST', 'GET'])
 def generate_report():
   if request.method == 'POST':
-  # local variables
-  files = None
+    # local variables
+    files = None
 
-  # get POST data
-  if request.files:
-    files = request.files
-  settings = request.form
+    # get POST data
+    if request.files:
+      files = request.files
+    settings = request.form
 
-  # process data
-  sender = Process_Report(settings, files)
-  report = sender.get_report()
+    # process data
+    sender = Process_Report(settings, files)
+    report = sender.get_report()
 
-  # return report
-  return json.loads(report)
+    # return report
+    return json.loads(report)
