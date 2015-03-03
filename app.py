@@ -3,7 +3,7 @@
 #      allows the presentation of (asynchronous) content.
 import json
 from flask import Flask, render_template, request
-from package.load_data import Load_Data
+from package.load_data import process_report
 
 # Initialize: create flask instance
 app = Flask(__name__)
@@ -20,9 +20,7 @@ def generate_report():
     files = None
 
     # process data
-    print 'jeff'
-    sender = Load_Data()
-    report = sender.get_report()
+    report = process_report()
 
     # return report
     return json.loads(report)
