@@ -20,7 +20,7 @@ def generate_report():
     files = None
 
     # process data
-    sender = Load_Data(settings, files)
+    sender = Load_Data()
     report = sender.get_report()
 
     # return report
