@@ -6,18 +6,24 @@
 import os
 from settings import LOG_ACTIVITY
 from package.parser.parser_data import Parse_Data
-from package.validator.validator_data import Validate_Data
 from package.generator.generator_data import Generate_Data
 
 ## process_report:
 def process_report():
-  with open(LOG_ACTIVITY)) as fp:
+  try:
+    with open(LOG_ACTIVITY)) as fp:
+      # parse data
+      sent_file         = Parse_Data(fp)
+      restructured_data = sent_file.restructure()
 
-    # parse data
+      # generate report
+      if restructured_data['data']:
+        sent_data = Generate_Data(restructured_data)
+        report    = sent_data.generate_report()
+      else: return False
 
-    # validate data
-
-    # generate report
-
-    # return report
-    return report
+      # return report
+      return report
+  except Exception, error:
+    print error
+    return False
