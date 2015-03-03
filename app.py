@@ -19,13 +19,8 @@ def generate_report():
     # local variables
     files = None
 
-    # get POST data
-    if request.files:
-      files = request.files
-    settings = request.form
-
     # process data
-    sender = Load_Data(settings, files)
+    sender = Load_Data()
     report = sender.get_report()
 
     # return report
