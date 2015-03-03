@@ -4,7 +4,7 @@
  */
 
 $(document).ready(function() {
-  $('button').on('click', function(event) {
+  $('.btn-generateReport').on('click', function(event) {
     event.preventDefault();
 
   // AJAX Process
