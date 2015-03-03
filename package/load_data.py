@@ -11,7 +11,7 @@ from package.generator.generator_data import Generate_Data
 ## process_report:
 def process_report():
   try:
-    with open(LOG_ACTIVITY)) as fp:
+    with open(LOG_ACTIVITY) as fp:
       # parse data
       sent_file         = Parse_Data(fp)
       restructured_data = sent_file.restructure()
