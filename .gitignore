@@ -2,3 +2,9 @@
 
 # Ignore and don't commit the following files
 /data/user-activity-example-feed.json
+/*.pyc
+/package/*.pyc
+/package/generator/*.pyc
+/package/parser/*.pyc
+/package/schema/*.pyc
+/package/validator/*.pyc
