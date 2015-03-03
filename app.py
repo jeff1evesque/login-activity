@@ -13,13 +13,14 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/generate_report/', methods=['POST', 'GET'])
+@app.route('/generate-report/', methods=['POST', 'GET'])
 def generate_report():
   if request.method == 'POST':
     # local variables
     files = None
 
     # process data
+    print 'jeff'
     sender = Load_Data()
     report = sender.get_report()
 
