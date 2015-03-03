@@ -3,10 +3,18 @@
 ## @load_data.py
 #  This file delegates parser, validator, report generator logic, and
 #      returns the correspond login-activity report.
-from settings import APP_ROOT
+import os
+from settings import LOG_ACTIVITY
 
-## Class: Load_Data, explicitly inherit 'new-style' class
-class Load_Data(object):
+## process_report:
+def process_report():
+  with open(LOG_ACTIVITY)) as fp:
 
-  ## constructor:
-  def __init__(self):
+    # parse data
+
+    # validate data
+
+    # generate report
+
+    # return report
+    return report
