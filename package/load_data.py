@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
 ## @load_data.py
-#  This file delegates parser, validator, and report generator logic, and
-#      responds the correspond login-activity report.
+#  This file delegates parser, validator, report generator logic, and
+#      returns the correspond login-activity report.
 
