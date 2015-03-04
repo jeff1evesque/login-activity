@@ -34,3 +34,8 @@ class Parse_Data(object):
   #                activity metrics.
   def user_metrics(self):
     pass
+
+  ## web_metrics: generate login count, and percentage metrics for users in
+  #               general.
+  def web_metrics(self):
+    pass
