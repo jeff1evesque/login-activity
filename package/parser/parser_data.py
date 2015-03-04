@@ -78,3 +78,17 @@ class Parse_Data(object):
         # validate with jsonschema
 
       # step case: successive time activity
+      elif item['id'] in unique_users:
+      
+        # record system, not client timestamp
+        if item['_source']['clientLog']['action'] == 'LoginSuccess':
+          login_success = [item['_source']['timestamp']]
+          unique_users[item['id']]['login_success'].append(login_success)
+        elif item['_source']['clientLog']['action'] == 'LoginFailure':
+          login_failure = [item['_source']['timestamp']]
+          unique_users[item['id']]['login_failure'].append(login_failure)
+        elif item['_source']['clientLog']['action'] == 'Logout':
+          logout_success = [item['_source']['timestamp']]
+          unique_users[item['id']]['logout_success'].append(logout_success)
+
+        # validate with jsonschema
