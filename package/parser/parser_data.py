@@ -50,5 +50,5 @@ class Parse_Data(object):
   #    - the percentage of users that have logged-in the last 30 days (A/B)
   #    - the percentage of users that have logged-in the last 60 days (A/B)
   #    - the percentage of users that have logged-in the last 90 days (A/B)
-  def user_metrics(self):
+  def user_metrics(self, data):
     pass
