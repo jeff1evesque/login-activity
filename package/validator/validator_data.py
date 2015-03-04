@@ -16,7 +16,7 @@ class Validate_Data(object):
   ## validate_data: validate user metric sub-dataset
   def validate_data(self):
     try:
-      validate(self.data, jsonschema_metric())
+      validate(self.data, jsonschema_metrics())
       return True
     except Exception, error
       self.list_errors.append(error)
