@@ -77,10 +77,13 @@ class Parse_Data(object):
 
       # base case: first time login (system time, not client time)
       if item['_id'] not in unique_users:
+        count_success = 0
+        count_failure = 0
         email = item['_id']
 
         if item['_source']['clientLog']['action'] == 'LoginSuccess':
           login_success = [item['_source']['timestamp']]
+          count_success = 1
 
           # determine if user has logged in the last 30, 60, 90 days
           if datetime_instance > datetime_back30:
@@ -95,12 +98,13 @@ class Parse_Data(object):
 
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
           login_failure = [item['_source']['timestamp']]
+          count_failure = 1
 
         elif item['_source']['clientLog']['action'] == 'Logout':
           logout_success = [item['_source']['timestamp']]
 
         # append user
-        unique_users[item['_id']] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success, 'back30days': back30days, 'back60days': back60days, 'back90days': back90days }
+        unique_users[item['_id']] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success, 'back30days': back30days, 'back60days': back60days, 'back90days': back90days, 'count_success': count_success, 'count_failure': count_failure }
 
         # validate with jsonschema
 
