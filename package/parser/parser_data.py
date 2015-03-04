@@ -113,9 +113,9 @@ class Parse_Data(object):
       
         # record system, not client timestamp
         if item['_source']['clientLog']['action'] == 'LoginSuccess':
-          timestamp_success = [item['_source']['timestamp']]
+          timestamp_success_item = item['_source']['timestamp']
           unique_users[item['_id']]['success'] += 1
-          unique_users[item['_id']]['timestamp_success'].append(timestamp_success)
+          unique_users[item['_id']]['timestamp_success'].append(timestamp_success_item)
 
           # determine if user has logged in the last 30, 60, 90 days
           if not unique_users[item['id']]['back30days']: list_days30.append(item['_id'])
@@ -123,12 +123,12 @@ class Parse_Data(object):
           if not unique_users[item['id']]['back90days']: list_days90.append(item['_id'])
 
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
-          timestamp_failure = [item['_source']['timestamp']]
-          unique_users[item['_id']]['timestamp_failure'].append(timestamp_failure)
+          timestamp_failure_item = item['_source']['timestamp']
+          unique_users[item['_id']]['timestamp_failure'].append(timestamp_failure_item)
           unique_users[item['_id']]['failure'] += 1
         elif item['_source']['clientLog']['action'] == 'Logout':
-          logout_success = [item['_source']['timestamp']]
-          unique_users[item['_id']]['logout_success'].append(logout_success)
+          logout_success_item = item['_source']['timestamp']
+          unique_users[item['_id']]['logout_success'].append(logout_success_item)
 
         # validate with jsonschema
 
