@@ -25,5 +25,5 @@ class Parse_Data(object):
   ## restructure: iterate over json file-object, and build a dict representation
   def restructure(self):
     # load dataset into dict
-    if self.dict: dataset_dict = self.dataset['hits']
-    else: dataset_dict = json.loads(self.dataset.read())['hits']
+    if self.dict: dataset_dict = self.dataset['hits']['hits']
+    else: dataset_dict = json.loads(self.dataset.read())['hits']['hits']
