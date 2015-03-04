@@ -55,8 +55,8 @@ class Parse_Data(object):
     # local variables
     unique_users = {}
     datetime_back30 = datetime.now() - timedelta(days=30)
-    datetime_back60 = datetime.now() - timedelta(days=30)
-    datetime_back90 = datetime.now() - timedelta(days=30)
+    datetime_back60 = datetime.now() - timedelta(days=60)
+    datetime_back90 = datetime.now() - timedelta(days=90)
 
     # iterate supplied data, generate metrics
     for index, item in enumerate(data):
@@ -74,6 +74,7 @@ class Parse_Data(object):
           login_success = [item['_source']['timestamp']]
 
           # check timestamp within 30, 60, 90 days
+          if 
 
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
           login_failure = [item['_source']['timestamp']]
