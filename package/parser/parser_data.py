@@ -75,11 +75,10 @@ class Parse_Data(object):
 
       datetime_instance = datetime.strptime(item['_source']['timestamp'], '%d-%m-%Y %H:%M:%S.%f')
 
-      # base case: first time activity
+      # base case: first time login (system time, not client time)
       if item['_id'] not in unique_users:
         email = item['_id']
 
-        # record system, not client timestamp
         if item['_source']['clientLog']['action'] == 'LoginSuccess':
           login_success = [item['_source']['timestamp']]
 
@@ -96,6 +95,7 @@ class Parse_Data(object):
 
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
           login_failure = [item['_source']['timestamp']]
+
         elif item['_source']['clientLog']['action'] == 'Logout':
           logout_success = [item['_source']['timestamp']]
 
@@ -104,7 +104,7 @@ class Parse_Data(object):
 
         # validate with jsonschema
 
-      # step case: successive time activity
+      # step case: successive time login (system time, not client time)
       elif item['_id'] in unique_users:
       
         # record system, not client timestamp
