@@ -14,6 +14,10 @@ import json
 class Parse_Data(object):
 
   ## constructor:
+  #
+  #  @self.dataset, is the either the dataset as a file-object, or python dict
+  #
+  #  @self.dict, the indicator whether the supplied dataset is a python dict
   def __init__(self, dataset, dict=False):
     self.dataset = dataset
     self.dict    = dict
