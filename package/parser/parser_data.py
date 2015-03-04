@@ -92,3 +92,6 @@ class Parse_Data(object):
           unique_users[item['id']]['logout_success'].append(logout_success)
 
         # validate with jsonschema
+
+    # return unique users login-activity metrics
+    return unique_users
