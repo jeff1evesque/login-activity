@@ -7,7 +7,7 @@
 #        sub-dataset is validated against an imported jsonschema, then
 #        appended to an overall restructured data.
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 ## Class: Parse_Data, explicitly inherit 'new-style' class
 class Parse_Data(object):
@@ -54,6 +54,9 @@ class Parse_Data(object):
   def user_metrics(self, data):
     # local variables
     unique_users = {}
+    datetime_back30 = datetime.now() - timedelta(days=30)
+    datetime_back60 = datetime.now() - timedelta(days=30)
+    datetime_back90 = datetime.now() - timedelta(days=30)
 
     # iterate supplied data, generate metrics
     for index, item in enumerate(data):
