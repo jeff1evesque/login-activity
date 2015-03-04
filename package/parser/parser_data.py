@@ -39,7 +39,7 @@ class Parse_Data(object):
   #    - date & time of the last successful log-in
   #    - date & time of the first successful log-in
   #    - count of successful log-ins
-- count of failed log-ins  
+  #    - count of failed log-ins  
   def user_metrics(self):
     pass
 
