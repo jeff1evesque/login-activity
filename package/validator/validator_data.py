@@ -8,7 +8,8 @@ class Validate_Data(object):
 
   ## constructor:
   def __init__(self, data):
-    self.data = data
+    self.data        = data
+    self.list_errors = []
 
   ## validate_data: validate user metric sub-dataset
   def validate_data(self):
