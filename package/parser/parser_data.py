@@ -8,6 +8,7 @@
 #        appended to an overall restructured data.
 import json
 from datetime import datetime, timedelta
+from package.validator.validator_data import Validate_Data
 
 ## Class: Parse_Data, explicitly inherit 'new-style' class
 class Parse_Data(object):
