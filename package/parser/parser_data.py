@@ -62,7 +62,7 @@ class Parse_Data(object):
 
       # base case: first time activity
       if item['_id'] not in unique_users:
-        email_address = item['_id']
+        email = item['_id']
 
         # record system, not client timestamp
         if item['_source']['clientLog']['action'] == 'LoginSuccess':
@@ -71,5 +71,8 @@ class Parse_Data(object):
           login_failure = [item['_source']['timestamp']]
         elif item['_source']['clientLog']['action'] == 'Logout':
           logout_success = [item['_source']['timestamp']]
+
+        # append user
+        unique_users[item['_id']] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success}
 
       # step case: first time activity
