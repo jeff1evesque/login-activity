@@ -18,7 +18,7 @@ def generate_report():
   if request.method == 'POST':
     # process, and return report
     report = process_report()
-    return json.loads(report)
+    return json.dumps(report)
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
