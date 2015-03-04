@@ -61,6 +61,7 @@ class Parse_Data(object):
       if item['_id'] not in unique_users:
         email_address = item['_id']
 
+        # record system, not client timestamp
         if item['_source']['clientLog']['action'] == 'LoginSuccess':
           login_success = [item['_source']['timestamp']]
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
