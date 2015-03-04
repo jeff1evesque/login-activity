@@ -83,7 +83,7 @@ class Parse_Data(object):
         if item['_source']['clientLog']['action'] == 'LoginSuccess':
           login_success = [item['_source']['timestamp']]
 
-          # check timestamp within 30, 60, 90 days
+          # determine if user has logged in the last 30, 60, 90 days
           if datetime_instance > datetime_back30:
             list_days30.append(item['_id'])
             back30days = True
