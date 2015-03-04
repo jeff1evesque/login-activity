@@ -54,6 +54,11 @@ class Parse_Data(object):
   def user_metrics(self, data):
     # local variables
     unique_users = {}
+
+    list_days30  = []
+    list_days60  = []
+    list_days90  = []
+
     datetime_back30 = datetime.now() - timedelta(days=30)
     datetime_back60 = datetime.now() - timedelta(days=60)
     datetime_back90 = datetime.now() - timedelta(days=90)
@@ -63,6 +68,11 @@ class Parse_Data(object):
       login_success     = []
       login_failure     = []
       logout_success    = []
+
+      back30days = False
+      back60days = False
+      back90day  = False
+
       datetime_instance = datetime.strptime(item['_source']['timestamp'], '%d-%m-%Y %H:%M:%S.%f')
 
       # base case: first time activity
@@ -74,7 +84,15 @@ class Parse_Data(object):
           login_success = [item['_source']['timestamp']]
 
           # check timestamp within 30, 60, 90 days
-          if 
+          if datetime_instance > datetime_back30:
+            list_days30.append(item['_id'])
+            back30days = True
+          if datetime_instance > datetime_back60:
+            list_days60.append(item['_id'])
+            back60days = True
+          if datetime_instance > datetime_back90:
+            back90days = True
+            list_days90.append(item['_id'])
 
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
           login_failure = [item['_source']['timestamp']]
@@ -82,7 +100,7 @@ class Parse_Data(object):
           logout_success = [item['_source']['timestamp']]
 
         # append user
-        unique_users[item['_id']] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success}
+        unique_users[item['_id']] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success, 'back30days': back30days, 'back60days': back60days, 'back90days': back90days }
 
         # validate with jsonschema
 
