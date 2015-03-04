@@ -9,3 +9,12 @@ class Validate_Data(object):
   ## constructor:
   def __init__(self, data):
     self.data = data
+
+  ## validate_data: validate user metric sub-dataset
+  def validate_data(self):
+    try:
+      validate(self.data, jsonschema_metric())
+      return True
+    except Exception, error
+      print error
+      return False
