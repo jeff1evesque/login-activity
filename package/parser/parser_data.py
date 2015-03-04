@@ -67,3 +67,5 @@ class Parse_Data(object):
           login_failure = [item['_source']['timestamp']]
         elif item['_source']['clientLog']['action'] == 'Logout':
           logout_success = [item['_source']['timestamp']]
+
+      # step case: first time activity
