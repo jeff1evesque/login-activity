@@ -63,7 +63,7 @@ class Parse_Data(object):
       login_success     = []
       login_failure     = []
       logout_success    = []
-      datetime_instance = datetime.strptime(str(item['_source']['timestamp']), '%d-%m-%Y %H:%M:%S.%f')
+      datetime_instance = datetime.strptime(item['_source']['timestamp'], '%d-%m-%Y %H:%M:%S.%f')
 
       # base case: first time activity
       if item['_id'] not in unique_users:
