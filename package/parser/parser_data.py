@@ -7,6 +7,7 @@
 #        sub-dataset is validated against an imported jsonschema, then
 #        appended to an overall restructured data.
 import json
+from datetime import datetime
 
 ## Class: Parse_Data, explicitly inherit 'new-style' class
 class Parse_Data(object):
