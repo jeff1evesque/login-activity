@@ -73,7 +73,7 @@ class Parse_Data(object):
       back60days = False
       back90day  = False
 
-      # convert string to datetime
+      # convert datetime-string to datetime
       datetime_instance = datetime.strptime(item['_source']['timestamp'], '%d-%m-%Y %H:%M:%S.%f')
 
       # base case: first time login (system time, not client time)
