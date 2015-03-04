@@ -68,6 +68,10 @@ class Parse_Data(object):
         # record system, not client timestamp
         if item['_source']['clientLog']['action'] == 'LoginSuccess':
           login_success = [item['_source']['timestamp']]
+
+          # check timestamp within 30, 60, 90 days
+          datetime_instance = datetime.strptime(str(item['_source']['timestamp']), '%d-%m-%Y %H:%M:%S.%f')
+
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
           login_failure = [item['_source']['timestamp']]
         elif item['_source']['clientLog']['action'] == 'Logout':
