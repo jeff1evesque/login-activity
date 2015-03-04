@@ -17,3 +17,7 @@ class Validate_Data(object):
       return True
     except Exception, error
       return False
+
+  ## get_errors: returns appended errors
+  def get_errors(self):
+    return self.list_errors
