@@ -6,6 +6,7 @@
 #  Note: during each iteration of parsing the supplied file-object, the
 #        sub-dataset is validated against an imported jsonschema, then
 #        appended to an overall restructured data.
+import json
 
 ## Class: Parse_Data, explicitly inherit 'new-style' class
 #
@@ -13,8 +14,11 @@
 class Parse_Data(object):
 
   ## constructor:
-  def __init__(self, fp):
-    self.fp = fp
+  def __init__(self, dataset, dict=False):
+    self.dataset = dataset
+    self.dict    = dict
 
   ## restructure: iterate over json file-object, and build a dict representation
   def restructure(self):
+    if self.dict: dataset_dict = self.dataset
+    else: dataset_dict = json.loads(self.fp.read())
