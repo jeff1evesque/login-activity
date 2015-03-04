@@ -75,4 +75,4 @@ class Parse_Data(object):
         # append user
         unique_users[item['_id']] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success}
 
-      # step case: first time activity
+      # step case: successive time activity
