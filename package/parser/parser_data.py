@@ -104,7 +104,7 @@ class Parse_Data(object):
           logout_success = [item['_source']['timestamp']]
 
         # append user
-        unique_users[item['_id']] = {'email': email, 'timestamp_success': timestamp_success, 'timestamp_failure': timestamp_failure, 'logout_success': logout_success, 'back30days': back30days, 'back60days': back60days, 'back90days': back90days, 'count_success': count_success, 'count_failure': count_failure }
+        unique_users[item['_id']] = {'email': email, 'timestamp_success': timestamp_success, 'timestamp_failure': timestamp_failure, 'logout_success': logout_success, 'back30days': back30days, 'back60days': back60days, 'back90days': back90days, 'count_success': count_success, 'count_failure': count_failure, 'login_first': timestamp_success[0], 'login_last': None}
 
         # validate with jsonschema
 
