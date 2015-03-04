@@ -17,6 +17,7 @@ class Validate_Data(object):
       validate(self.data, jsonschema_metric())
       return True
     except Exception, error
+      self.list_errors.append(error)
       return False
 
   ## get_errors: returns appended errors
