@@ -111,6 +111,10 @@ class Parse_Data(object):
         if item['_source']['clientLog']['action'] == 'LoginSuccess':
           login_success = [item['_source']['timestamp']]
           unique_users[item['_id']]['login_success'].append(login_success)
+
+          if not unique_users[item['id']]['back30days']: list_days30.append(item['_id'])
+          if not unique_users[item['id']]['back60days']: list_days60.append(item['_id'])
+          if not unique_users[item['id']]['back90days']: list_days90.append(item['_id'])
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
           login_failure = [item['_source']['timestamp']]
           unique_users[item['_id']]['login_failure'].append(login_failure)
