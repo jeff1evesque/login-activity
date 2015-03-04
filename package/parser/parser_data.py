@@ -32,10 +32,28 @@ class Parse_Data(object):
 
   ## user_metrics: generate a list of users, and their corresponding login
   #                activity metrics.
+  #
+  #  Specifically, the following metrics will be returned
+  #
+  #    - email address
+  #    - date & time of the last successful log-in
+  #    - date & time of the first successful log-in
+  #    - count of successful log-ins
+- count of failed log-ins  
   def user_metrics(self):
     pass
 
   ## web_metrics: generate login count, and percentage metrics for users in
   #               general.
+  #
+  #  Specifically, the following metrics will be returned
+  #
+  #    - the count of users that have ever logged-in (A)
+  #    - the count of users that have logged-in the last 30 days (B)
+  #    - the count of users that have logged-in the last 60 days (B)
+  #    - the count of users that have logged-in the last 90 days (B)
+  #    - the percentage of users that have logged-in the last 30 days (A/B)
+  #    - the percentage of users that have logged-in the last 60 days (A/B)
+  #    - the percentage of users that have logged-in the last 90 days (A/B)
   def web_metrics(self):
     pass
