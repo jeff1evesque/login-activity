@@ -111,7 +111,14 @@ class Parse_Data(object):
         # append user
         unique_users[item['_id']] = {'email': email, 'timestamp_success': timestamp_success, 'timestamp_failure': timestamp_failure, 'logout_success': logout_success, 'back30days': back30days, 'back60days': back60days, 'back90days': back90days, 'count_success': count_success, 'count_failure': count_failure, 'login_first': timestamp_success[0], 'login_last': None}
 
-        # validate with jsonschema
+        # validate with jsonschema, return error
+        sender   = Validate_Data(unique_users[item['_id']])
+        validate = sender.validate_data()
+
+        if not validate:
+          error_validation = sender.get_errors()
+          print error_validation
+          return {'user_metric': None, 'error': error_validation}
 
       # step case: successive time login (system time, not client time)
       elif item['_id'] in unique_users:
@@ -143,7 +150,14 @@ class Parse_Data(object):
           logout_success_item = item['_source']['timestamp']
           unique_users[item['_id']]['logout_success'].append(logout_success_item)
 
-        # validate with jsonschema
+        # validate with jsonschema, return error
+        sender   = Validate_Data(unique_users[item['_id']])
+        validate = sender.validate_data()
+
+        if not validate:
+          error_validation = sender.get_errors()
+          print error_validation
+          return {'user_metric': None, 'error': error_validation}
 
     # return unique users login-activity metrics
-    return unique_users
+    return {'user_metric': unique_users, 'error': None}
