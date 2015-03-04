@@ -25,3 +25,7 @@ class Parse_Data(object):
     # load dataset into dict
     if self.dict: dataset_dict = self.dataset['hits']['hits']
     else: dataset_dict = json.loads(self.dataset.read())['hits']['hits']
+
+    # close file, and return dataset dict
+    self.dataset.close()
+    return dataset_dict
