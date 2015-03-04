@@ -85,14 +85,6 @@ python app.py
 
 **Note:** when running the above `app.py`, ensure that the terminal window is not used for any other processes, while the web application is available to others.
 
-##Execution
-
-Once `app.py` is running on a dedicated terminal window, this application can be accessed via any web-browser:
-
-```
-http://localhost:5000/
-```
-
 ###JSON Schema
 
 [JSON Schema](https://pypi.python.org/pypi/jsonschema) provides an implementation to validate [JSON](http://en.wikipedia.org/wiki/JSON) data structures. When a specific element within the JSON structure fails validation, an [exception](https://wiki.python.org/moin/HandlingExceptions) is raised indicating the corresponding *error message*.
@@ -103,3 +95,11 @@ Additional documentation:
 - [jsonschema](http://python-jsonschema.readthedocs.org/en/latest/)
 
 This project implements *JSON Schema* validation, as a backend-validation tool. Specifically, [`jsonschema_data.py`](https://github.com/jeff1evesque/login-activity/blob/master/package/schema/jsonschema_data.py.py) defines acceptable *schemas* to validate against, while [`validator_data.py`](https://github.com/jeff1evesque/login-activity/blob/master/package/validator/validator_data.py) implements the validation schema(s).
+
+##Execution
+
+Once `app.py` is running on a dedicated terminal window, this application can be accessed via any web-browser:
+
+```
+http://localhost:5000/
+```
