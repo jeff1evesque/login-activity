@@ -51,4 +51,10 @@ class Parse_Data(object):
   #    - the percentage of users that have logged-in the last 60 days (A/B)
   #    - the percentage of users that have logged-in the last 90 days (A/B)
   def user_metrics(self, data):
-    pass
+    # local variables
+    unique_users = {}
+
+    # iterate supplied data, generate metrics
+    for index, item in enumerate(data):
+      if item['_id'] not in unique_users:
+        email_address = item['_id']
