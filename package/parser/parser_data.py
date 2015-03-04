@@ -60,9 +60,10 @@ class Parse_Data(object):
 
     # iterate supplied data, generate metrics
     for index, item in enumerate(data):
-      login_success  = []
-      login_failure  = []
-      logout_success = []
+      login_success     = []
+      login_failure     = []
+      logout_success    = []
+      datetime_instance = datetime.strptime(str(item['_source']['timestamp']), '%d-%m-%Y %H:%M:%S.%f')
 
       # base case: first time activity
       if item['_id'] not in unique_users:
@@ -73,7 +74,6 @@ class Parse_Data(object):
           login_success = [item['_source']['timestamp']]
 
           # check timestamp within 30, 60, 90 days
-          datetime_instance = datetime.strptime(str(item['_source']['timestamp']), '%d-%m-%Y %H:%M:%S.%f')
 
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
           login_failure = [item['_source']['timestamp']]
