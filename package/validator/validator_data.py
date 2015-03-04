@@ -16,5 +16,4 @@ class Validate_Data(object):
       validate(self.data, jsonschema_metric())
       return True
     except Exception, error
-      print error
       return False
