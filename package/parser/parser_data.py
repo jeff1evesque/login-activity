@@ -114,6 +114,7 @@ class Parse_Data(object):
         # record system, not client timestamp
         if item['_source']['clientLog']['action'] == 'LoginSuccess':
           login_success = [item['_source']['timestamp']]
+          unique_users[item['_id']]['success'] += 1
           unique_users[item['_id']]['login_success'].append(login_success)
 
           # determine if user has logged in the last 30, 60, 90 days
@@ -124,6 +125,7 @@ class Parse_Data(object):
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
           login_failure = [item['_source']['timestamp']]
           unique_users[item['_id']]['login_failure'].append(login_failure)
+          unique_users[item['_id']]['failure'] += 1
         elif item['_source']['clientLog']['action'] == 'Logout':
           logout_success = [item['_source']['timestamp']]
           unique_users[item['_id']]['logout_success'].append(logout_success)
