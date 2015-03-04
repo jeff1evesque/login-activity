@@ -117,6 +117,11 @@ class Parse_Data(object):
           unique_users[item['_id']]['success'] += 1
           unique_users[item['_id']]['timestamp_success'].append(timestamp_success_item)
 
+          # record first, and last time login
+          if unique_users[item['_id']]['last_login'] == None and timestamp_success_item > unique_users[item['_id']]['first_login']: unique[item['_id']]['last_login'] = timestamp_success_item
+          elif timestamp_success_item > unique_users[item['_id']]['last_login']: unique_users[item['_id']]['last_login'] = timestamp_success_item
+          elif timestamp_success_item < unique_users[item['_id']]['first_login']: unique_users[item['_id']]['login'] = timestamp_success_item
+
           # determine if user has logged in the last 30, 60, 90 days
           if not unique_users[item['id']]['back30days']: list_days30.append(item['_id'])
           if not unique_users[item['id']]['back60days']: list_days60.append(item['_id'])
