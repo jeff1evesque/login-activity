@@ -56,5 +56,14 @@ class Parse_Data(object):
 
     # iterate supplied data, generate metrics
     for index, item in enumerate(data):
+
+      # base case: first time activity
       if item['_id'] not in unique_users:
         email_address = item['_id']
+
+        if item['_source']['clientLog']['action'] == 'LoginSuccess':
+          login_success = [item['_source']['timestamp']]
+        elif item['_source']['clientLog']['action'] == 'LoginFailure':
+          login_failure = [item['_source']['timestamp']]
+        elif item['_source']['clientLog']['action'] == 'Logout':
+          logout_success = [item['_source']['timestamp']]
