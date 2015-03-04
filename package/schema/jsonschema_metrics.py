@@ -41,13 +41,13 @@ def jsonschema_metrics():
           'minLength': 1
         },
       },
-      'back30days': {
+      'login30days': {
         'enum': [True, False]
       },
-      'back60days': {
+      'login60days': {
         'enum': [True, False]
       },
-      'back90days': {
+      'login90days': {
         'enum': [True, False]
       },
       'count_success': {
