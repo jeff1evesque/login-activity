@@ -29,3 +29,8 @@ class Parse_Data(object):
     # close file, and return restructured dataset
     self.dataset.close()
     return dataset_dict
+
+  ## user_metrics: generate a list of users, and their corresponding login
+  #                activity metrics.
+  def user_metrics(self):
+    pass
