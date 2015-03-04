@@ -50,5 +50,48 @@ class Parse_Data(object):
   #    - the percentage of users that have logged-in the last 30 days (A/B)
   #    - the percentage of users that have logged-in the last 60 days (A/B)
   #    - the percentage of users that have logged-in the last 90 days (A/B)
-  def user_metrics(self):
-    pass
+  def user_metrics(self, data):
+    # local variables
+    unique_users = {}
+
+    # iterate supplied data, generate metrics
+    for index, item in enumerate(data):
+      login_success  = []
+      login_failure  = []
+      logout_success = []
+
+      # base case: first time activity
+      if item['_id'] not in unique_users:
+        email = item['_id']
+
+        # record system, not client timestamp
+        if item['_source']['clientLog']['action'] == 'LoginSuccess':
+          login_success = [item['_source']['timestamp']]
+        elif item['_source']['clientLog']['action'] == 'LoginFailure':
+          login_failure = [item['_source']['timestamp']]
+        elif item['_source']['clientLog']['action'] == 'Logout':
+          logout_success = [item['_source']['timestamp']]
+
+        # append user
+        unique_users[item['_id']] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success}
+
+        # validate with jsonschema
+
+      # step case: successive time activity
+      elif item['id'] in unique_users:
+      
+        # record system, not client timestamp
+        if item['_source']['clientLog']['action'] == 'LoginSuccess':
+          login_success = [item['_source']['timestamp']]
+          unique_users[item['id']]['login_success'].append(login_success)
+        elif item['_source']['clientLog']['action'] == 'LoginFailure':
+          login_failure = [item['_source']['timestamp']]
+          unique_users[item['id']]['login_failure'].append(login_failure)
+        elif item['_source']['clientLog']['action'] == 'Logout':
+          logout_success = [item['_source']['timestamp']]
+          unique_users[item['id']]['logout_success'].append(logout_success)
+
+        # validate with jsonschema
+
+    # return unique users login-activity metrics
+    return unique_users
