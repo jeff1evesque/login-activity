@@ -9,8 +9,6 @@
 import json
 
 ## Class: Parse_Data, explicitly inherit 'new-style' class
-#
-#  @self.fp, a json file-object, representing the supplied dataset
 class Parse_Data(object):
 
   ## constructor:
