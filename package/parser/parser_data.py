@@ -70,9 +70,9 @@ class Parse_Data(object):
       login_failure  = []
       logout_success = []
 
-      back30days = False
-      back60days = False
-      back90day  = False
+      login30days = False
+      login60days = False
+      login90day  = False
 
       # convert datetime-string to datetime
       datetime_instance = datetime.strptime(item['_source']['timestamp'], '%d-%m-%Y %H:%M:%S.%f')
@@ -91,12 +91,12 @@ class Parse_Data(object):
           # determine if user has logged in the last 30, 60, 90 days
           if datetime_instance > datetime_back30:
             list_days30.append(item['_id'])
-            back30days = True
+            login30days = True
           if datetime_instance > datetime_back60:
             list_days60.append(item['_id'])
-            back60days = True
+            login60days = True
           if datetime_instance > datetime_back90:
-            back90days = True
+            login90days = True
             list_days90.append(item['_id'])
 
         # add unsuccessful login timestamp, increment counter
@@ -109,7 +109,7 @@ class Parse_Data(object):
           logout_success = [item['_source']['timestamp']]
 
         # append user
-        unique_users[item['_id']] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success, 'back30days': back30days, 'back60days': back60days, 'back90days': back90days, 'count_success': count_success, 'count_failure': count_failure, 'login_first': login_success[0], 'login_last': None}
+        unique_users[item['_id']] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success, 'login30days': login30days, 'login60days': login60days, 'login90days': login90days, 'count_success': count_success, 'count_failure': count_failure, 'login_first': login_success[0], 'login_last': None}
 
         # validate with jsonschema, return error
         sender   = Validate_Data(unique_users[item['_id']])
@@ -135,9 +135,9 @@ class Parse_Data(object):
           elif login_success_item < unique_users[item['_id']]['first_login']: unique_users[item['_id']]['login'] = login_success_item
 
           # determine if user has logged in the last 30, 60, 90 days
-          if not unique_users[item['id']]['back30days']: list_days30.append(item['_id'])
-          if not unique_users[item['id']]['back60days']: list_days60.append(item['_id'])
-          if not unique_users[item['id']]['back90days']: list_days90.append(item['_id'])
+          if not unique_users[item['id']]['login30days']: list_days30.append(item['_id'])
+          if not unique_users[item['id']]['login60days']: list_days60.append(item['_id'])
+          if not unique_users[item['id']]['login90days']: list_days90.append(item['_id'])
 
         # add unsuccessful login timestamp, increment counter
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
