@@ -66,7 +66,6 @@ class Generate_Data(object):
         raise
 
     # create file
-    print APP_ROOT + '/login_activity.csv'
     with open(APP_ROOT + '/login_activity.csv', 'w') as csvfile:
       csv_report = csv.writer(csvfile)
 
