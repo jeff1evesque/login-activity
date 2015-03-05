@@ -3,7 +3,7 @@
 ## @validator_data.py
 #  This file performs various validations on login data.
 from jsonschema import validate
-from package.schema.jsonschema_data import jsonschema_metrics
+from package.schema.jsonschema_metrics import jsonschema_metrics
 
 ## Class: Validate_Data, explicitly inherit 'new-style' class
 class Validate_Data(object):
@@ -18,7 +18,7 @@ class Validate_Data(object):
     try:
       validate(self.data, jsonschema_metrics())
       return True
-    except Exception, error
+    except Exception, error:
       self.list_errors.append(error)
       return False
 
