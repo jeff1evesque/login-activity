@@ -62,7 +62,7 @@ class Generate_Data(object):
     try:
       os.makedirs(APP_ROOT + '/static/csv/')
     except OSError:
-      if not os.path.isdir(path):
+      if not os.path.isdir(APP_ROOT + '/static/csv'):
         raise
 
     # create file
