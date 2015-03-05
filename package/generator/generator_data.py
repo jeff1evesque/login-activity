@@ -67,15 +67,21 @@ class Generate_Data(object):
         raise
 
     # create file
-    with open(path + 'login_activity.csv', 'w') as csvfile:
-      csv_report = csv.writer(csvfile)
+    try:
+      with open(path + 'login_activity.csv', 'w') as csvfile:
+        # create csv object
+        csv_report = csv.writer(csvfile)
 
-      # write csv header row
-      csv_report.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
+        # write csv header row
+        csv_report.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
 
-      # write remaining rows
-      for item in self.user_metrics:
-        column = self.user_metrics[item]
+        # write remaining rows
+        for item in self.user_metrics:
+          column = self.user_metrics[item]
+          csv_report.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure']])
 
-        csv_report.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure']])
+      return True
 
+    except Exception, error:
+      print error
+      return False
