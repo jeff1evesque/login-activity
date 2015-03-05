@@ -18,7 +18,7 @@ def generate_report():
   if request.method == 'POST':
     # process, and return report
     report = process_report()
-    return render_templates('activity_report.html', data=map(json.dumps, report))
+    return render_template('activity_report.html', data=map(json.dumps, report))
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':
