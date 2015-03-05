@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-## @generator.py
+## @generator_data.py
 #  This file generates a report of user login-activity using the supplied
 #      dataset.
 
