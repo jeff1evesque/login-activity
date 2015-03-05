@@ -22,7 +22,7 @@ class Generate_Data(object):
   #      - B: the count, each, of users that have logged-in the last 30, 60, 90
   #            days (three distinct metrics)
   #      - C: the %, each, of users that have logged-in the last 30, 60, 90 days
-  #            (calculated as A over B, as three distinct metrics)
+  #            (calculated as B over A, as three distinct metrics)
   def generate_report(self):
     # local variables
     count_30 = 0
