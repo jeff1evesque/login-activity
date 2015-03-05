@@ -15,6 +15,7 @@ def process_report():
       # parse data
       sent_file         = Parse_Data(fp)
       restructured_data = sent_file.restructure()
+      user_metrics  = sent_file.user_metrics(restructured_data)
 
       # generate report
       if restructured_data:
