@@ -5,7 +5,7 @@ Login Activity
 
 This project is a proof of concept, used to generate a report of login activities. Using a provided json file, typically stored in the [`/data/`](https://github.com/jeff1evesque/login-activity/blob/master/data/) subdirectory, a login-activity report is generated as a webpage.
 
-Specifically, the web login-activity report will contain the following metrics:
+**Metrics:** Web Report
 
 - A: the count of users that have ever logged-in
 - B: the count, each, of users that have logged-in the last 30, 60, 90 days (three distinct metrics)
@@ -13,7 +13,7 @@ Specifically, the web login-activity report will contain the following metrics:
 
 In addition to the web log-activity report, a downloadable csv link will be provided in the `/static/csv/` directory.  Each row in the file, corresponds to a user within the system.
 
-Specifically, the csv login-activity report will contain the following metrics:
+**Metrics:** CSV Report
 
 - email address
 - date & time of the last successful log-in
