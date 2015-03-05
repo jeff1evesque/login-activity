@@ -121,7 +121,7 @@ class Parse_Data(object):
         if not validate:
           error_validation = sender.get_errors()
           print error_validation
-          return {'user_metric': None, 'error': error_validation}
+          return {'data': None, 'error': error_validation}
 
       # step case: successive time login (system time, not client time)
       elif item['_id'] in unique_users:
@@ -167,7 +167,7 @@ class Parse_Data(object):
         if not validate:
           error_validation = sender.get_errors()
           print error_validation
-          return {'user_metric': None, 'error': error_validation}
+          return {'data': None, 'error': error_validation}
 
     # return unique users login-activity metrics
-    return {'user_metric': unique_users, 'error': None}
+    return {'data': unique_users, 'error': None}
