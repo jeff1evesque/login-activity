@@ -15,13 +15,11 @@ class Generate_Data(object):
   #
   #  The following web-metrics will be generated:
   #
-  #      - the count of users that have ever logged-in (A)
-  #      - the count, each, of users that have logged-in the last 30 days (B)
-  #      - the count, each, of users that have logged-in the last 60 days (B)
-  #      - the count, each  of users that have logged-in the last 90 days (B)
-  #      - the percentage, each, of users that have logged-in the last 30 days (A/B)
-  #      - the percentage, each, of users that have logged-in the last 60 days (A/B)
-  #      - the percentage, each, of users that have logged-in the last 90 days (A/B)
+  #      - A: the count of users that have ever logged-in
+  #      - B: the count, each, of users that have logged-in the last 30, 60, 90
+  #            days (three distinct metrics)
+  #      - C: the %, each, of users that have logged-in the last 30, 60, 90 days
+  #            (calculated as A over B, as three distinct metrics)
   def generate_report(self):
     # local variables
     count_30 = 0
