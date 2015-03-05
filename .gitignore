@@ -1,10 +1,12 @@
 # Ignore and don't commit the following directories
 
 # Ignore and don't commit the following files
-/data/user-activity-example-feed.json
 /*.pyc
+/data/user-activity-example-feed.json
+/data/smaller.json
 /package/*.pyc
 /package/generator/*.pyc
 /package/parser/*.pyc
 /package/schema/*.pyc
 /package/validator/*.pyc
+/static/csv/login_activity.csv
