@@ -2,6 +2,7 @@
 
 ## @validator_data.py
 #  This file performs various validations on login data.
+import json
 from jsonschema import validate
 from package.schema.jsonschema_metrics import jsonschema_metrics
 
@@ -16,7 +17,7 @@ class Validate_Data(object):
   ## validate_data: validate user metric sub-dataset
   def validate_data(self):
     try:
-      validate(self.data, jsonschema_metrics())
+      validate(json.dumps(self.data), jsonschema_metrics())
       return True
     except Exception, error:
       self.list_errors.append(error)
