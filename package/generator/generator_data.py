@@ -66,11 +66,11 @@ class Generate_Data(object):
         raise
 
     # create file
-    #fp = csv.writer(open(APP_ROOT + '/static/csv/login-activity.csv', 'wb+'))
+    fp = csv.writer(open(APP_ROOT + '/static/csv/login-activity.csv', 'wb+'))
 
     # write csv header row
-    #fp.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
+    fp.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
 
     # write remaining rows
-    #for column in self.user_metrics:
-    #  fp.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure'])
+    for column in self.user_metrics:
+      fp.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure'])
