@@ -3,6 +3,7 @@
 ## @generator_data.py
 #  This file generates a report of user login-activity using the supplied
 #      dataset.
+import csv, json
 
 ## Class: Generate_Data, explicitly inherit 'new-style' class
 class Generate_Data(object):
