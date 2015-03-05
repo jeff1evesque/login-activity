@@ -72,7 +72,7 @@ class Parse_Data(object):
 
       login30days = False
       login60days = False
-      login90day  = False
+      login90days = False
 
       # convert datetime-string to datetime
       datetime_instance = datetime.strptime(item['_source']['timestamp'], '%d-%m-%Y %H:%M:%S.%f')
@@ -90,17 +90,17 @@ class Parse_Data(object):
 
           # determine if user has logged in the last 30, 60, 90 days
           if datetime_instance > datetime_back30:
+            if list_days30[0] == None: list_days30.remove(None)
             list_days30.append(item['_id'])
             login30days = True
-            list_days30.remove(None)
           if datetime_instance > datetime_back60:
+            if list_days60[0] == None: list_days60.remove(None)
             list_days60.append(item['_id'])
             login60days = True
-            list_days60.remove(None)
           if datetime_instance > datetime_back90:
+            if list_days90[0] == None: list_days90.remove(None)
             login90days = True
             list_days90.append(item['_id'])
-            list_days90.remove(None)
 
         # add unsuccessful login timestamp, increment counter
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
@@ -139,18 +139,18 @@ class Parse_Data(object):
 
           # determine if user has logged in the last 30, 60, 90 days
           if not unique_users[item['_id']]['login30days']:
-            if len(unique_users[item['_id']]['login30days']) == 1: unique_users[item['_id']]['login30days'].remove(None)
+            if len(unique_users[item['_id']]['login30days']) == 1 and unique_users[item['_id']]['login30days'][0] == None: unique_users[item['_id']]['login30days'].remove(None)
             list_days30.append(item['_id'])
           if not unique_users[item['_id']]['login60days']:
-            if len(unique_users[item['_id']]['login60days']) == 1: unique_users[item['_id']]['login60days'].remove(None)
+            if len(unique_users[item['_id']]['login60days']) == 1 and unique_users[item['_id']]['login60days'][0] == None: unique_users[item['_id']]['login60days'].remove(None)
             list_days60.append(item['_id'])
           if not unique_users[item['_id']]['login90days']:
-            if len(unique_users[item['_id']]['login90days']) == 1: unique_users[item['_id']]['login90days'].remove(None)
+            if len(unique_users[item['_id']]['login90days']) == 1 and unique_users[item['_id']]['login90days'][0] == None: unique_users[item['_id']]['login90days'].remove(None)
             list_days90.append(item['_id'])
 
         # add unsuccessful login timestamp, increment counter
         elif item['_source']['clientLog']['action'] == 'LoginFailure':
-          if len(unique_users[item['_id']]['login_failure']) == 1: unique_users[item['_id']]['login_failure'].remove(None)
+          if len(unique_users[item['_id']]['login_failure']) == 1 and unique_users[item['_id']]['login_failure'][0] == None: unique_users[item['_id']]['login_failure'].remove(None)
           login_failure_item = item['_source']['timestamp']
           unique_users[item['_id']]['login_failure'].append(login_failure_item)
           unique_users[item['_id']]['failure'] += 1
