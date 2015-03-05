@@ -7,7 +7,7 @@ from settings import LOG_ACTIVITY
 from package.parser.parser_data import Parse_Data
 from package.generator.generator_data import Generate_Data
 
-## process_report:
+## process_report: transform supplied dataset into login-activity report.
 def process_report():
   try:
     with open(LOG_ACTIVITY) as fp:
