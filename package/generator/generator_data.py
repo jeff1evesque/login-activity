@@ -34,9 +34,9 @@ class Generate_Data(object):
 
     # login count for users in the last 30, 60, 90 days
     for item in self.user_metrics:
-      if item['login30days']: count_30 += 1
-      if item['login60days']: count_60 += 1
-      if item['login90days']: count_90 += 1
+      if self.user_metrics[item]['login30days']: count_30 += 1
+      if self.user_metrics[item]['login60days']: count_60 += 1
+      if self.user_metrics[item]['login90days']: count_90 += 1
 
     # percentage of users that have logged-in the last 30, 60, 90 days
     percentage_30 = count_user / count_30
@@ -66,11 +66,11 @@ class Generate_Data(object):
         raise
 
     # create file
-    fp = csv.writer(open(APP_ROOT + '/static/csv/login-activity.csv', 'wb+'))
+    #fp = csv.writer(open(APP_ROOT + '/static/csv/login-activity.csv', 'wb+'))
 
     # write csv header row
-    fp.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
+    #fp.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
 
     # write remaining rows
-    for column in self.user_metrics:
-      fp.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure'])
+    #for column in self.user_metrics:
+    #  fp.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure'])
