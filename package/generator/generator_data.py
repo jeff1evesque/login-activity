@@ -23,8 +23,27 @@ class Generate_Data(object):
   #      - the percentage, each, of users that have logged-in the last 60 days (A/B)
   #      - the percentage, each, of users that have logged-in the last 90 days (A/B)
   def generate_report(self):
+    # local variables
+    count_30 = 0
+    count_60 = 0
+    count_90 = 0
+
     # count of users that have logged in
     count_user = len(self.user_metrics)
+
+    # login count for users in the last 30, 60, 90 days
+    for item in self.user_metrics:
+      if item['login30days']: count_30 += 1
+      if item['login60days']: count_60 += 1
+      if item['login90days']: count_90 += 1
+
+    # percentage of users that have logged-in the last 30, 60, 90 days
+    percentage_30 = count_user / count_30
+    percentage_60 = count_user / count_60
+    percentage_90 = count_user / count_90
+
+    # return web-metrics
+    return {'total_count': count_user, 'total_30': count_30, 'total_60': count_60, 'total_90': count_90, 'percentage_30': percentage_30, 'percentage_60': percentage_60, 'percentage_90': percentage_90}
 
   ## generate_csv: generate the login-activity report contained within a csv.
   #
