@@ -59,11 +59,11 @@ class Generate_Data(object):
   #  Note: the csv will have a header row with each column title
   def generate_csv(self):
     # create csv directory
-    #try:
-    #  os.makedirs(APP_ROOT + '/static/csv/')
-    #except OSError:
-    #  if not os.path.isdir(path):
-    #    raise
+    try:
+      os.makedirs(APP_ROOT + '/static/csv/')
+    except OSError:
+      if not os.path.isdir(path):
+        raise
 
     # create file
     print APP_ROOT + '/login_activity.csv'
@@ -76,5 +76,6 @@ class Generate_Data(object):
       # write remaining rows
       for item in self.user_metrics:
         column = self.user_metrics[item]
+
         csv_report.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure']])
 
