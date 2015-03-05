@@ -4,6 +4,7 @@
 #  This file generates a report of user login-activity using the supplied
 #      dataset.
 import csv, json
+from settings import APP_ROOT
 
 ## Class: Generate_Data, explicitly inherit 'new-style' class
 class Generate_Data(object):
@@ -57,7 +58,7 @@ class Generate_Data(object):
   #  Note: the csv will have a header row with each column title
   def generate_csv(self):
     # create file
-    fp = csv.writer(open('login-activity.csv', 'wb+'))
+    fp = csv.writer(open(APP_ROOT + 'static/csv/login-activity.csv', 'wb+'))
 
     # write csv header row
     fp.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
