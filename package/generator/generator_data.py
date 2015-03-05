@@ -59,18 +59,22 @@ class Generate_Data(object):
   #  Note: the csv will have a header row with each column title
   def generate_csv(self):
     # create csv directory
-    try:
-      os.makedirs(APP_ROOT + '/static/csv/')
-    except OSError:
-      if not os.path.isdir(path):
-        raise
+    #try:
+    #  os.makedirs(APP_ROOT + '/static/csv/')
+    #except OSError:
+    #  if not os.path.isdir(path):
+    #    raise
 
     # create file
-    fp = csv.writer(open(APP_ROOT + '/static/csv/login-activity.csv', 'wb+'))
+    print APP_ROOT + '/login_activity.csv'
+    with open(APP_ROOT + '/login_activity.csv', 'w') as csvfile:
+      csv_report = csv.writer(csvfile)
 
-    # write csv header row
-    fp.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
+      # write csv header row
+      csv_report.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
 
-    # write remaining rows
-    for column in self.user_metrics:
-      fp.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure'])
+      # write remaining rows
+      for item in self.user_metrics:
+        column = self.user_metrics[item]
+        csv_report.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure']])
+
