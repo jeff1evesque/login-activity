@@ -32,26 +32,8 @@ class Parse_Data(object):
     self.dataset.close()
     return dataset_dict
 
-  ## user_metrics: generate a list of users, and their corresponding login
+  ## user_metrics: generate a dict of users, and their corresponding login
   #                activity metrics.
-  #
-  #  The following user-metrics will be generated
-  #
-  #    - email address
-  #    - date & time of the last successful log-in
-  #    - date & time of the first successful log-in
-  #    - count of successful log-ins
-  #    - count of failed log-ins  
-  #
-  #  The following web-metrics will be generated
-  #
-  #    - the count of users that have ever logged-in (A)
-  #    - the count of users that have logged-in the last 30 days (B)
-  #    - the count of users that have logged-in the last 60 days (B)
-  #    - the count of users that have logged-in the last 90 days (B)
-  #    - the percentage of users that have logged-in the last 30 days (A/B)
-  #    - the percentage of users that have logged-in the last 60 days (A/B)
-  #    - the percentage of users that have logged-in the last 90 days (A/B)
   def user_metrics(self, data):
     # local variables
     unique_users = {}
