@@ -56,9 +56,9 @@ class Parse_Data(object):
     # local variables
     unique_users = {}
 
-    list_days30  = []
-    list_days60  = []
-    list_days90  = []
+    list_days30  = [None]
+    list_days60  = [None]
+    list_days90  = [None]
 
     datetime_back30 = datetime.now() - timedelta(days=30)
     datetime_back60 = datetime.now() - timedelta(days=60)
@@ -66,9 +66,9 @@ class Parse_Data(object):
 
     # iterate supplied data, generate metrics
     for index, item in enumerate(data):
-      login_success  = []
-      login_failure  = []
-      logout_success = []
+      login_success  = [None]
+      login_failure  = [None]
+      logout_success = [None]
 
       login30days = False
       login60days = False
