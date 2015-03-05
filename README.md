@@ -9,7 +9,7 @@ This project is a proof of concept, used to generate a report of login activitie
 
 - A: the count of users that have ever logged-in
 - B: the count, each, of users that have logged-in the last 30, 60, 90 days (three distinct metrics)
-- C: the %, each, of users that have logged-in the last 30, 60, 90 days (calculated as A over B, as three distinct metrics)
+- C: the %, each, of users that have logged-in the last 30, 60, 90 days (calculated as B over A, as three distinct metrics)
 
 In addition to the web log-activity report, a downloadable csv link will be provided in the `/static/csv/` directory.  Each row in the file, corresponds to a user within the system.
 
