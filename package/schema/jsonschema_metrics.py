@@ -64,7 +64,7 @@ def jsonschema_metrics():
         'minLength': 1
       },
       'login_last': {
-        'type': ['string', None],
+        'type': ['string', 'null'],
         'format': 'date-time',
         'minLength': 1
       },
