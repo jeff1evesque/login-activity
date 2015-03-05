@@ -56,4 +56,12 @@ class Generate_Data(object):
   #
   #  Note: the csv will have a header row with each column title
   def generate_csv(self):
-    pass
+    # create file
+    fp = csv.writer(open('login-activity.csv', 'wb+'))
+
+    # write csv header row
+    fp.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
+
+    # write remaining rows
+    for column in self.user_metrics:
+      fp.writerow([column['email'], column['login_last'], column['login_first'], column['count_success'], column['count_failure'])
