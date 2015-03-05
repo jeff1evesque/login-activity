@@ -11,7 +11,7 @@ Specifically, the web login-activity report will contain the following metrics:
 - B: the count, each, of users that have logged-in the last 30, 60, 90 days (three distinct metrics)
 - C: the %, each, of users that have logged-in the last 30, 60, 90 days (calculated as A over B, as three distinct metrics)
 
-In addition to the web log-activity report, a downloadable csv link will be provided, where each row corresponds to a user within the system.
+In addition to the web log-activity report, a downloadable csv link will be provided in the `/static/csv/` directory.  Each row in the file, corresponds to a user within the system.
 
 Specifically, the csv login-activity report will contain the following metrics:
 
