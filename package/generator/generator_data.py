@@ -57,8 +57,15 @@ class Generate_Data(object):
   #
   #  Note: the csv will have a header row with each column title
   def generate_csv(self):
+    # create csv directory
+    try:
+      os.makedirs(APP_ROOT + '/static/csv/')
+    except OSError:
+      if not os.path.isdir(path):
+        raise
+
     # create file
-    fp = csv.writer(open(APP_ROOT + 'static/csv/login-activity.csv', 'wb+'))
+    fp = csv.writer(open(APP_ROOT + '/static/csv/login-activity.csv', 'wb+'))
 
     # write csv header row
     fp.writerow(['email', 'login-last', 'login-first', 'count-success', 'count-failure'])
