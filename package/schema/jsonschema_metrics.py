@@ -70,4 +70,4 @@ def jsonschema_metrics():
       },
     },
   }
-return schema
+  return schema
