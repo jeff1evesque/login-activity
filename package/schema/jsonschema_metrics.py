@@ -18,7 +18,7 @@ def jsonschema_metrics():
         'type': 'array',
         'minItems': 1,
         'items': {
-          'type': 'string',
+          'type': ['string', 'null'],
           'format': 'date-time',
           'minLength': 1
         },
@@ -27,7 +27,7 @@ def jsonschema_metrics():
         'type': 'array',
         'minItems': 1,
         'items': {
-          'type': 'string',
+          'type': ['string', 'null'],
           'format': 'date-time',
           'minLength': 1
         },
@@ -36,7 +36,7 @@ def jsonschema_metrics():
         'type': 'array',
         'minItems': 1,
         'items': {
-          'type': 'string',
+          'type': ['string', 'null'],
           'format': 'date-time',
           'minLength': 1
         },
@@ -59,7 +59,7 @@ def jsonschema_metrics():
         'minLength': 1
       },
       'login_first': {
-        'type': 'string',
+        'type': ['string', 'null'],
         'format': 'date-time',
         'minLength': 1
       },
