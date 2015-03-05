@@ -3,6 +3,7 @@
 ## @generator_data.py
 #  This file generates a report of user login-activity using the supplied
 #      dataset.
+import os
 import csv, json
 from settings import APP_ROOT
 
