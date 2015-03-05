@@ -9,6 +9,26 @@
     <script src='/static/js/jquery-2.1.1.js'></script>
   </head>
   <body>
+
+    {% block content %}
+      {% if data['csv_created'] == True %}
+        <div>A comprehensive report can be reviewed within <a href='/static/csv/login_activity.csv'>logic_activity.csv</a></div>
+      {% endif %}
+    {% endblock content %}
+
+    <div class='login-total'>Total Logins: {{data['report']['total_count']}}</div>
+
+    <div class='login-count'>
+      <div>Login Count (30 days): {{data['report']['total_30']}}</div>
+      <div>Login Count (60 days): {{data['report']['total_60']}}</div>
+      <div>Login Count (90 days): {{data['report']['total_90']}}</div>
+    </div>
+
+    <div class='login-percentage'>
+      <div>Login Percentage (30 days): {{data['report']['percentage_30']}}</div>
+      <div>Login Percentage (60 days): {{data['report']['percentage_60']}}</div>
+      <div>Login Percentage (90 days): {{data['report']['percentage_90']}}</div>
+    </div>
+
   </body>
 </html>
-
