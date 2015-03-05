@@ -12,7 +12,28 @@ class Generate_Data(object):
     self.user_metrics = user_metrics
 
   ## generate_report: generate the login-activity report displayed on a webpage.
+  #
+  #  The following web-metrics will be generated:
+  #
+  #      - the count of users that have ever logged-in (A)
+  #      - the count, each, of users that have logged-in the last 30 days (B)
+  #      - the count, each, of users that have logged-in the last 60 days (B)
+  #      - the count, each  of users that have logged-in the last 90 days (B)
+  #      - the percentage, each, of users that have logged-in the last 30 days (A/B)
+  #      - the percentage, each, of users that have logged-in the last 60 days (A/B)
+  #      - the percentage, each, of users that have logged-in the last 90 days (A/B)
   def generate_report(self):
+    
 
   ## generate_csv: generate the login-activity report contained within a csv.
+  #
+  #  The following user-metrics will be generated
+  #
+  #    - email address
+  #    - date & time of the last successful log-in
+  #    - date & time of the first successful log-in
+  #    - count of successful log-ins
+  #    - count of failed log-ins
+  #
+  #  Note: the csv will have a header row with each column title
   def generate_csv(self):
