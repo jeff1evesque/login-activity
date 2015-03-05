@@ -34,9 +34,9 @@ class Generate_Data(object):
 
     # login count for users in the last 30, 60, 90 days
     for item in self.user_metrics:
-      if item['login30days']: count_30 += 1
-      if item['login60days']: count_60 += 1
-      if item['login90days']: count_90 += 1
+      if self.user_metrics[item]['login30days']: count_30 += 1
+      if self.user_metrics[item]['login60days']: count_60 += 1
+      if self.user_metrics[item]['login90days']: count_90 += 1
 
     # percentage of users that have logged-in the last 30, 60, 90 days
     percentage_30 = count_user / count_30
