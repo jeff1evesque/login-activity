@@ -11,7 +11,6 @@ $(document).ready(function() {
     var ajax_report = $.ajax({
       type: 'POST',
       url: '/generate-report/',
-      dataset: 'json',
       beforeSend: function() {
         ajaxLoader( $('body') );
       }
