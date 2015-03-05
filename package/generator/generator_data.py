@@ -39,9 +39,9 @@ class Generate_Data(object):
       if self.user_metrics[item]['login90days']: count_90 += 1
 
     # percentage of users that have logged-in the last 30, 60, 90 days
-    percentage_30 = count_30 / count_user
-    percentage_60 = count_60 / count_user
-    percentage_90 = count_90 / count_user
+    percentage_30 = float(count_30) / float(count_user)
+    percentage_60 = float(count_60) / float(count_user)
+    percentage_90 = float(count_90) / float(count_user)
 
     # return web-metrics
     return {'total_count': count_user, 'total_30': count_30, 'total_60': count_60, 'total_90': count_90, 'percentage_30': percentage_30, 'percentage_60': percentage_60, 'percentage_90': percentage_90}
