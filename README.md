@@ -8,12 +8,10 @@ This project is a proof of concept, used to generate a report of login activitie
 Specifically, the web log-activity report will contain the following metrics:
 
 - A: the count of users that have ever logged-in
-- B: the count, of users that have logged-in the last 30 days
-- B: the count, of users that have logged-in the last 60 days
-- B: the count, of users that have logged-in the last 90 days
-- C: the percentage of users that have logged-in the last 30 days (A/B)
-- C: the percentage of users that have logged-in the last 60 days (A/B)
-- C: the percentage of users that have logged-in the last 90 days (A/B)
+- B: the count, each, of users that have logged-in the last 30, 60, 90
+         days (three distinct metrics)
+- C: the %, each, of users that have logged-in the last 30, 60, 90 days
+         (calculated as A over B, as three distinct metrics)
 
 In addition to the web log-activity report, a downloadable csv link will be provided.  Specifically, each row in the csv will correspond to a user within the system, and will contain the following metrics:
 
