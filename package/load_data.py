@@ -26,7 +26,8 @@ def process_report():
         return False
 
       # return report
-      return report
+      if report and report_csv: return {'report': report, 'csv_created': True}
+      else: return {'report': report, 'csv_created': False}
   except Exception, error:
     print error
     return False
