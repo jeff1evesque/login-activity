@@ -60,13 +60,14 @@ class Generate_Data(object):
   def generate_csv(self):
     # create csv directory
     try:
-      os.makedirs(APP_ROOT + '/static/csv/')
+      path = APP_ROOT + '/static/csv/'
+      os.makedirs(path)
     except OSError:
-      if not os.path.isdir(APP_ROOT + '/static/csv'):
+      if not os.path.isdir(path):
         raise
 
     # create file
-    with open(APP_ROOT + '/login_activity.csv', 'w') as csvfile:
+    with open(path + 'login_activity.csv', 'w') as csvfile:
       csv_report = csv.writer(csvfile)
 
       # write csv header row
