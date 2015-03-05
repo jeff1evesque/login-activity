@@ -23,7 +23,8 @@ class Generate_Data(object):
   #      - the percentage, each, of users that have logged-in the last 60 days (A/B)
   #      - the percentage, each, of users that have logged-in the last 90 days (A/B)
   def generate_report(self):
-    
+    # count of users that have logged in
+    count_user = len(self.user_metrics)
 
   ## generate_csv: generate the login-activity report contained within a csv.
   #
@@ -37,3 +38,4 @@ class Generate_Data(object):
   #
   #  Note: the csv will have a header row with each column title
   def generate_csv(self):
+    pass
