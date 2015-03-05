@@ -3,25 +3,27 @@
 ## @load_data.py
 #  This file delegates parser, validator, report generator logic, and
 #      returns the correspond login-activity report.
-import os
 from settings import LOG_ACTIVITY
 from package.parser.parser_data import Parse_Data
 from package.generator.generator_data import Generate_Data
 
-## process_report:
+## process_report: transform supplied dataset into login-activity report.
 def process_report():
   try:
     with open(LOG_ACTIVITY) as fp:
       # parse data
       sent_file         = Parse_Data(fp)
       restructured_data = sent_file.restructure()
-      user_metrics  = sent_file.user_metrics(restructured_data)
+      user_metrics      = sent_file.user_metrics(restructured_data)
 
       # generate report
-      if restructured_data:
-        sent_data = Generate_Data(restructured_data)
-        report    = sent_data.generate_report()
-      else: return False
+      if user_metrics['data']:
+        sent_data  = Generate_Data(user_metrics['data'])
+        report     = sent_data.generate_report()
+        report_csv = sent_data.generate_csv()
+      else:
+        print user_metrics['error']
+        return False
 
       # return report
       return report
