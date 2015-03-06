@@ -23,7 +23,6 @@ $(document).ready(function() {
 
     // debug
       console.log(data);
-      console.log(data.csv_created);
 
     // csv report
       if (data.csv_created) var csv_report = '<div>A comprehensive report can be reviewed within <a href="/static/csv/login_activity.csv">logic_activity.csv</a></div>';
@@ -37,9 +36,9 @@ $(document).ready(function() {
 
     // login percentages
       var login_percentages = '<div class="login-percentages">';
-        login_percentages += '<div>Login Percentage (30 days): ' + data.report.percentage_30 + '</div>';
-        login_percentages += '<div>Login Percentage (60 days): ' + data.report.percentage_60 + '</div>';
-        login_percentages += '<div>Login Percentage (90 days): ' + data.report.percentage_90 + '</div>';
+        login_percentages += '<div>Login Percentage (30 days): ' + (data.report.percentage_30 * 100).toFixed(2) + '%</div>';
+        login_percentages += '<div>Login Percentage (60 days): ' + (data.report.percentage_60 * 100).toFixed(2) + '%</div>';
+        login_percentages += '<div>Login Percentage (90 days): ' + (data.report.percentage_90 * 100).toFixed(2) + '%</div>';
         login_percentages += '</div>';
 
     // append to dom
