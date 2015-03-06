@@ -41,6 +41,9 @@ $(document).ready(function() {
         login_percentages += '<div>Login Percentage (90 days): ' + (data.report.percentage_90 * 100).toFixed(2) + '%</div>';
         login_percentages += '</div>';
 
+    // remove previous report
+       $('.report').remove()
+
     // append to dom
        $('body').append('<div class="report">' + csv_report + login_counts + login_percentages + '</div>');
     });
