@@ -22,7 +22,7 @@ $(document).ready(function() {
       $('.ajax_overlay').fadeOut(200, function(){ $(this).remove() });
 
     // debug
-      console.log(data);
+      //console.log(data);
 
     // csv report
       if (data.csv_created) var csv_report = '<div>A comprehensive report can be reviewed within <a href="/static/csv/login_activity.csv">logic_activity.csv</a></div>';
