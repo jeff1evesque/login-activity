@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
 
   // AJAX Success
-    ajax_report.done(function() {
+    ajax_report.done(function(data) {
       $('.ajax_overlay').fadeOut(200, function(){ $(this).remove() });
     });
 
