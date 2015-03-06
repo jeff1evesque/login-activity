@@ -44,7 +44,7 @@ $(document).ready(function() {
     // remove previous report
        $('.report').remove()
 
-    // append to dom
+    // append report to dom
        $('body').append('<div class="report">' + csv_report + login_counts + login_percentages + '</div>');
     });
 
