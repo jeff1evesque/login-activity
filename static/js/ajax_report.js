@@ -22,7 +22,7 @@ $(document).ready(function() {
       $('.ajax_overlay').fadeOut(200, function(){ $(this).remove() });
 
     // debug
-      console.log(data);
+      //console.log(data);
 
     // csv report
       if (data.csv_created) var csv_report = '<div>A comprehensive report can be reviewed within <a href="/static/csv/login_activity.csv">logic_activity.csv</a></div>';
@@ -41,7 +41,10 @@ $(document).ready(function() {
         login_percentages += '<div>Login Percentage (90 days): ' + (data.report.percentage_90 * 100).toFixed(2) + '%</div>';
         login_percentages += '</div>';
 
-    // append to dom
+    // remove previous report
+       $('.report').remove()
+
+    // append report to dom
        $('body').append('<div class="report">' + csv_report + login_counts + login_percentages + '</div>');
     });
 
