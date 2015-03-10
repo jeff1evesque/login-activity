@@ -94,6 +94,10 @@ Additional documentation:
 
 This project implements *JSON Schema* validation, as a backend-validation tool. Specifically, [`jsonschema_metrics.py`](https://github.com/jeff1evesque/login-activity/blob/master/package/schema/jsonschema_metrics.py) defines acceptable *schemas* to validate against, while [`validator_data.py`](https://github.com/jeff1evesque/login-activity/blob/master/package/validator/validator_data.py) implements the validation schema(s).
 
+###Dataset
+
+This project requires a structured JSON file, to be used as the original user-activity dataset, stored relative to the project directory.  By default, [`settings.py`](https://github.com/jeff1evesque/login-activity/blob/master/settings.py#L10) contains the path of the json dataset file, within the `LOG_ACTIVITY` constant.  This specific variable is implemented within [`load_data.py`](https://github.com/jeff1evesque/login-activity/blob/master/package/load_data.py#L13), when the JSON file is opened as a file-object.
+
 ##Execution
 
 Once `app.py` is running on a dedicated terminal window, this application can be accessed via any web-browser:
