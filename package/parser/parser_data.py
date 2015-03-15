@@ -25,11 +25,12 @@ class Parse_Data(object):
   ## restructure: iterate over supplied dataset, and build a dict representation
   def restructure(self):
     # load dataset into dict
-    if self.dict: dataset_dict = self.dataset['hits']['hits']
-    else: dataset_dict = json.loads(self.dataset.read())['hits']['hits']
+    if self.flag_dict:
+      dataset_dict = self.dataset['hits']['hits']
+    else:
+      dataset_dict = json.load(self.dataset)['hits']['hits']
 
-    # close file, and return restructured dataset
-    self.dataset.close()
+    # return restructured dataset
     return dataset_dict
 
   ## user_metrics: generate a dict of users, and their corresponding login
