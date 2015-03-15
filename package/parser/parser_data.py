@@ -15,21 +15,22 @@ class Parse_Data(object):
 
   ## constructor:
   #
-  #  @self.dataset, is the dataset as either a file-object, or python dict
+  #  @self.dataset, the dataset as either a file-object, or python dict
   #
-  #  @self.dict, the indicator whether the supplied dataset is a python dict
-  def __init__(self, dataset, dict=False):
-    self.dataset = dataset
-    self.dict    = dict
+  #  @self.flag_dict, the indicator whether the supplied dataset is a python dict
+  def __init__(self, dataset, flag_dict=False):
+    self.dataset   = dataset
+    self.flag_dict = flag_dict
 
-  ## restructure: iterate over json file-object, and build a dict representation
+  ## restructure: iterate over supplied dataset, and build a dict representation
   def restructure(self):
     # load dataset into dict
-    if self.dict: dataset_dict = self.dataset['hits']['hits']
-    else: dataset_dict = json.loads(self.dataset.read())['hits']['hits']
+    if self.flag_dict:
+      dataset_dict = self.dataset['hits']['hits']
+    else:
+      dataset_dict = json.load(self.dataset)['hits']['hits']
 
-    # close file, and return restructured dataset
-    self.dataset.close()
+    # return restructured dataset
     return dataset_dict
 
   ## user_metrics: generate a dict of users, and their corresponding login
