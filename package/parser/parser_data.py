@@ -115,7 +115,7 @@ class Parse_Data(object):
         if action == 'LoginSuccess':
           login_success_item = timestamp
           unique_users[item['_id']]['login_success'].append(login_success_item)
-          unique_users[item['_id']]['success'] += 1
+          unique_users[item['_id']]['count_success'] += 1
 
           # record first, and last time login
           if unique_users[item['_id']]['last_login'] == None and login_success_item > unique_users[item['_id']]['first_login']: unique[item['_id']]['last_login'] = login_success_item
@@ -138,7 +138,7 @@ class Parse_Data(object):
           if len(unique_users[item['_id']]['login_failure']) == 1 and unique_users[item['_id']]['login_failure'][0] == None: unique_users[item['_id']]['login_failure'].remove(None)
           login_failure_item = timestamp
           unique_users[item['_id']]['login_failure'].append(login_failure_item)
-          unique_users[item['_id']]['failure'] += 1
+          unique_users[item['_id']]['count_failure'] += 1
 
         # add successful logout timestamp
         elif action == 'Logout':
