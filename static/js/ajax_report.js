@@ -27,6 +27,11 @@ $(document).ready(function() {
     // csv report
       if (data.csv_created) var csv_report = '<div>A comprehensive report can be reviewed within <a href="/static/csv/login_activity.csv">logic_activity.csv</a></div>';
 
+    // total counts
+     var total_counts = '<div class="login-totals">';
+       total_counts += '<div>Login Total: ' + data.report.total_count + '</div>';
+       total_counts += '</div>';
+
     // login counts
       var login_counts = '<div class="login-counts">';
         login_counts += '<div>Login Count (30 days): ' + data.report.total_30 + '</div>';
@@ -45,7 +50,7 @@ $(document).ready(function() {
        $('.report').remove()
 
     // append report to dom
-       $('body').append('<div class="report">' + csv_report + login_counts + login_percentages + '</div>');
+       $('body').append('<div class="report">' + csv_report + total_counts + login_counts + login_percentages + '</div>');
     });
 
   // AJAX Failure
