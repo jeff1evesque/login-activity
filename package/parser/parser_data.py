@@ -59,6 +59,7 @@ class Parse_Data(object):
 
       timestamp = item['_source']['timestamp']
       action    = item['_source']['clientLog']['action']
+      email     = item['_source']['clientLog']['email']
 
       # convert datetime-string to datetime
       datetime_instance = datetime.strptime(timestamp, '%d-%m-%Y %H:%M:%S.%f')
@@ -67,8 +68,6 @@ class Parse_Data(object):
       if item['_id'] not in unique_users:
         count_success = 0
         count_failure = 0
-        email = item['_id']
-
         # add successful login timestamp, increment counter
         if action == 'LoginSuccess':
           login_success = [timestamp]
