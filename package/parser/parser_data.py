@@ -123,14 +123,14 @@ class Parse_Data(object):
           elif login_success_item < unique_users[email]['login_first']: unique_users[email]['login_first'] = login_success_item
 
           # determine if user has logged in the last 30, 60, 90 days
-          if not unique_users[email]['login30days']:
-            if len(unique_users[email]['login30days']) == 1 and unique_users[email]['login30days'][0] == None: unique_users[email]['login30days'].remove(None)
+          if not unique_users[email]['login60days']:
+            if len(unique_users[email]['list_days30']) == 1 and unique_users[email]['list_days30'][0] == None: unique_users[email]['list_days30'].remove(None)
             list_days30.append(timestamp)
           if not unique_users[email]['login60days']:
-            if len(unique_users[email]['login60days']) == 1 and unique_users[email]['login60days'][0] == None: unique_users[email]['login60days'].remove(None)
+            if len(unique_users[email]['list_days60']) == 1 and unique_users[email]['list_days60'][0] == None: unique_users[email]['list_days60'].remove(None)
             list_days60.append(timestamp)
           if not unique_users[email]['login90days']:
-            if len(unique_users[email]['login90days']) == 1 and unique_users[email]['login90days'][0] == None: unique_users[email]['login90days'].remove(None)
+            if len(unique_users[email]['list_days90']) == 1 and unique_users[email]['list_days90'][0] == None: unique_users[email]['list_days90'].remove(None)
             list_days90.append(timestamp)
 
         # add unsuccessful login timestamp, increment counter
