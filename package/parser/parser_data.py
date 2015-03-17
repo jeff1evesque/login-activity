@@ -58,6 +58,7 @@ class Parse_Data(object):
       login90days = False
 
       timestamp = item['_source']['timestamp']
+      action    = item['_source']['clientLog']['action']
 
       # convert datetime-string to datetime
       datetime_instance = datetime.strptime(timestamp, '%d-%m-%Y %H:%M:%S.%f')
@@ -69,7 +70,7 @@ class Parse_Data(object):
         email = item['_id']
 
         # add successful login timestamp, increment counter
-        if item['_source']['clientLog']['action'] == 'LoginSuccess':
+        if action == 'LoginSuccess':
           login_success = [timestamp]
           count_success = 1
 
@@ -88,12 +89,12 @@ class Parse_Data(object):
             list_days90.append(timestamp)
 
         # add unsuccessful login timestamp, increment counter
-        elif item['_source']['clientLog']['action'] == 'LoginFailure':
+        elif action == 'LoginFailure':
           login_failure = [timestamp]
           count_failure = 1
 
         # add successful logout timestamp
-        elif item['_source']['clientLog']['action'] == 'Logout':
+        elif action == 'Logout':
           logout_success = [timestamp]
 
         # append user
@@ -112,7 +113,7 @@ class Parse_Data(object):
       elif item['_id'] in unique_users:
       
         # add successful login timestamp, increment counter
-        if item['_source']['clientLog']['action'] == 'LoginSuccess':
+        if action == 'LoginSuccess':
           login_success_item = timestamp
           unique_users[item['_id']]['login_success'].append(login_success_item)
           unique_users[item['_id']]['success'] += 1
@@ -134,14 +135,14 @@ class Parse_Data(object):
             list_days90.append(timestamp)
 
         # add unsuccessful login timestamp, increment counter
-        elif item['_source']['clientLog']['action'] == 'LoginFailure':
+        elif action == 'LoginFailure':
           if len(unique_users[item['_id']]['login_failure']) == 1 and unique_users[item['_id']]['login_failure'][0] == None: unique_users[item['_id']]['login_failure'].remove(None)
           login_failure_item = timestamp
           unique_users[item['_id']]['login_failure'].append(login_failure_item)
           unique_users[item['_id']]['failure'] += 1
 
         # add successful logout timestamp
-        elif item['_source']['clientLog']['action'] == 'Logout':
+        elif action == 'Logout':
           logout_success_item = timestamp
           unique_users[item['_id']]['logout_success'].append(logout_success_item)
 
