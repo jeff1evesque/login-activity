@@ -122,9 +122,9 @@ class Parse_Data(object):
 
           if unique_users[email]['login_last'] != None:
             datetime_last = datetime.strptime(unique_users[email]['login_last'], '%d-%m-%Y %H:%M:%S.%f')
-            if datetime_instance < datetime_last:
+            if datetime_instance > datetime_last:
               unique_users[email]['login_last'] = timestamp
-            elif datetime_instance > datetime_first:
+            elif datetime_instance < datetime_first:
               unique_users[email]['login_first'] = timestamp
           elif unique_users[email]['login_last'] == None:
             if datetime_instance > datetime_first:
