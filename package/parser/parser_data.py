@@ -113,14 +113,25 @@ class Parse_Data(object):
       
         # add successful login timestamp, increment counter
         if action == 'LoginSuccess':
-          login_success_item = timestamp
-          unique_users[email]['login_success'].append(login_success_item)
+          unique_users[email]['login_success'].append(timestamp)
           unique_users[email]['count_success'] += 1
 
           # record first, and last time login
-          if unique_users[email]['login_last'] == None and login_success_item > unique_users[email]['login_first']: unique[email]['login_last'] = login_success_item
-          elif login_success_item > unique_users[email]['login_last']: unique_users[email]['login_last'] = login_success_item
-          elif login_success_item < unique_users[email]['login_first']: unique_users[email]['login_first'] = login_success_item
+          datetime_instance = datetime.strptime(timestamp, '%d-%m-%Y %H:%M:%S.%f')
+          datetime_first    = datetime.strptime(unique_users[email]['login_first'], '%d-%m-%Y %H:%M:%S.%f')
+
+          if unique_users[email]['login_last'] != None:
+            datetime_last = datetime.strptime(unique_users[email]['login_last'], '%d-%m-%Y %H:%M:%S.%f')
+            if datetime_instance < datetime_last:
+              unique_users[email]['login_last'] = timestamp
+            elif datetime_instance > datetime_first:
+              unique_users[email]['login_first'] = timestamp
+          elif unique_users[email]['login_last'] == None:
+            if datetime_instance > datetime_first:
+              unique_users[email]['login_last'] = timestamp
+            else:
+              unique_users[email]['login_last'] = unique_users[email]['login_first']
+              unique_users[email]['login_first'] = timestamp
 
           # determine if user has logged in the last 30, 60, 90 days
           if not unique_users[email]['login60days']:
