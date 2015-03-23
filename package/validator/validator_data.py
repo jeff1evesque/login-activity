@@ -2,7 +2,7 @@
 
 ## @validator_data.py
 #  This file performs various validations on login data.
-from jsonschema import validate
+from jsonschema.validators import Draft4Validator
 from package.schema.jsonschema_metrics import jsonschema_metrics, jsonschema_timestamp
 
 ## Class: Validate_Data, explicitly inherit 'new-style' class
@@ -16,7 +16,7 @@ class Validate_Data(object):
   ## validate_data: validate user metric sub-dataset
   def validate_data(self):
     try:
-      validate(self.data, jsonschema_metrics())
+      Draft4Validator(jsonschema_metrics()).validate(self.data)
       return True
     except Exception, error:
       self.list_errors.append(error)
@@ -25,7 +25,7 @@ class Validate_Data(object):
   ## validate_timestamp: validate login timestamps
   def validate_timestamp(self):
     try:
-      validate(self.data, jsonschema_timestamp())
+      Draft4Validator(jsonschema_timestamp()).validate(self.data)
       return True
     except Exception, error:
       self.list_errors.append(error)
