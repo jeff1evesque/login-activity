@@ -108,10 +108,12 @@ class Parse_Data(object):
         sender_properties   = Validate_Data(unique_users[email])
         validate_properties = sender.validate_data()
 
+        # return error(s)
         if not validate_timestamp and not validate_properties:
-          error = sender.get_errors()
-          print error_validation
-          return {'data': None, 'error': error_validation}
+          self.list_errors.append(sender_timestamp.get_errors())
+          self.list_errors.append(sender_properties.get_errors())
+          print self.list_errors
+          return {'data': None, 'error': self.list_errors}
 
       # step case: successive time login (system time, not client time)
       elif email in unique_users:
@@ -169,10 +171,12 @@ class Parse_Data(object):
         sender_properties   = Validate_Data(unique_users[email])
         validate_properties = sender.validate_data()
 
-        if not validate:
-          error_validation = sender.get_errors()
-          print error_validation
-          return {'data': None, 'error': error_validation}
+        # return error(s)
+        if not validate_timestamp and not validate_properties:
+          self.list_errors.append(sender_timestamp.get_errors())
+          self.list_errors.append(sender_properties.get_errors())
+          print self.list_errors
+          return {'data': None, 'error': self.list_errors}
 
     # return unique users login-activity metrics
     return {'data': unique_users, 'error': None}
