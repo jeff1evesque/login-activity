@@ -99,12 +99,16 @@ class Parse_Data(object):
         # append user
         unique_users[email] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success, 'login30days': login30days, 'login60days': login60days, 'login90days': login90days, 'count_success': count_success, 'count_failure': count_failure, 'login_first': login_success[0], 'login_last': None, 'list_days30': list_days30, 'list_days60': list_days60, 'list_days90': list_days90}
 
-        # validate with jsonschema, return error
-        sender   = Validate_Data(unique_users[email])
-        validate = sender.validate_data()
+        # validate 'login_xxx' properties for 'unique_users', return error
+        sender_timestamp  = Validate_Data(timestamp)
+        validate_timstamp = sender_timestamp.validate_data()
 
-        if not validate:
-          error_validation = sender.get_errors()
+        # validate remaining 'unique_users' properties, return error
+        sender_properties   = Validate_Data(unique_users[email])
+        validate_properties = sender.validate_data()
+
+        if not validate_timestamp and not validate_properties:
+          error = sender.get_errors()
           print error_validation
           return {'data': None, 'error': error_validation}
 
@@ -156,9 +160,13 @@ class Parse_Data(object):
           logout_success_item = timestamp
           unique_users[email]['logout_success'].append(logout_success_item)
 
-        # validate with jsonschema, return error
-        sender   = Validate_Data(unique_users[email])
-        validate = sender.validate_data()
+        # validate 'login_xxx' properties for 'unique_users', return error
+        sender_timestamp  = Validate_Data(timestamp)
+        validate_timstamp = sender_timestamp.validate_data()
+
+        # validate remaining 'unique_users' properties, return error
+        sender_properties   = Validate_Data(unique_users[email])
+        validate_properties = sender.validate_data()
 
         if not validate:
           error_validation = sender.get_errors()
