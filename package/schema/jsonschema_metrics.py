@@ -29,24 +29,6 @@ def jsonschema_metrics():
         #'format': 'email',
         'minLength': 1
       },
-      'login_failure': {
-        'type': 'array',
-        'minItems': 1,
-        'items': {
-          'type': ['string', 'null'],
-          'format': 'date-time',
-          'minLength': 1
-        },
-      },
-      'logout_success': {
-        'type': 'array',
-        'minItems': 1,
-        'items': {
-          'type': ['string', 'null'],
-          'format': 'date-time',
-          'minLength': 1
-        },
-      },
       'login30days': {
         'enum': [True, False]
       },
