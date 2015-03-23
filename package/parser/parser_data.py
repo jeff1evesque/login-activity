@@ -109,7 +109,7 @@ class Parse_Data(object):
         validate_properties = sender_properties.validate_data()
 
         # return error(s)
-        if not validate_timestamp and not validate_properties:
+        if not validate_timestamp or not validate_properties:
           self.list_errors.append(sender_timestamp.get_errors())
           self.list_errors.append(sender_properties.get_errors())
           print self.list_errors
@@ -172,7 +172,8 @@ class Parse_Data(object):
         validate_properties = sender_properties.validate_data()
 
         # return error(s)
-        if not validate_timestamp and not validate_properties:
+        if not validate_timestamp or not validate_properties:
+          print 'jeff'
           self.list_errors.append(sender_timestamp.get_errors())
           self.list_errors.append(sender_properties.get_errors())
           print self.list_errors
