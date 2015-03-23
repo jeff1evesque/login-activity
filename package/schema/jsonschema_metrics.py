@@ -3,7 +3,7 @@
 ## @jsonschema_metrics.py
 #  This file contains the valid schema for the login metrics.
 
-def jsonschema_login_success():
+def jsonschema_timestamp():
   schema = {
     'type': 'object',
     'properties':,
