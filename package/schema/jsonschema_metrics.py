@@ -8,7 +8,7 @@
 def jsonschema_timestamp():
   schema = {
     'type': 'object',
-    'properties':,
+    'properties': {
       'login_success': {
         'items': {
           'type': ['string', 'null'],
