@@ -10,11 +10,9 @@ def jsonschema_timestamp():
     'type': 'object',
     'properties': {
       'login_success': {
-        'items': {
-          'type': ['string', 'null'],
-          'format': 'date-time',
-          'minLength': 1
-        },
+        'type': ['string', 'null'],
+        'format': 'date-time',
+        'minLength': 1
       },
     },
   }
