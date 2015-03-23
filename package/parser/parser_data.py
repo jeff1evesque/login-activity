@@ -19,8 +19,9 @@ class Parse_Data(object):
   #
   #  @self.flag_dict, the indicator whether the supplied dataset is a python dict
   def __init__(self, dataset, flag_dict=False):
-    self.dataset   = dataset
-    self.flag_dict = flag_dict
+    self.dataset     = dataset
+    self.flag_dict   = flag_dict
+    self.list_errors = []
 
   ## restructure: iterate over supplied dataset, and build a dict representation
   def restructure(self):
@@ -99,14 +100,20 @@ class Parse_Data(object):
         # append user
         unique_users[email] = {'email': email, 'login_success': login_success, 'login_failure': login_failure, 'logout_success': logout_success, 'login30days': login30days, 'login60days': login60days, 'login90days': login90days, 'count_success': count_success, 'count_failure': count_failure, 'login_first': login_success[0], 'login_last': None, 'list_days30': list_days30, 'list_days60': list_days60, 'list_days90': list_days90}
 
-        # validate with jsonschema, return error
-        sender   = Validate_Data(unique_users[email])
-        validate = sender.validate_data()
+        # validate 'login_xxx' properties for 'unique_users', return error
+        sender_timestamp  = Validate_Data(timestamp)
+        validate_timestamp = sender_timestamp.validate_timestamp()
 
-        if not validate:
-          error_validation = sender.get_errors()
-          print error_validation
-          return {'data': None, 'error': error_validation}
+        # validate remaining 'unique_users' properties, return error
+        sender_properties   = Validate_Data(unique_users[email])
+        validate_properties = sender_properties.validate_data()
+
+        # return error(s)
+        if not validate_timestamp and not validate_properties:
+          self.list_errors.append(sender_timestamp.get_errors())
+          self.list_errors.append(sender_properties.get_errors())
+          print self.list_errors
+          return {'data': None, 'error': self.list_errors}
 
       # step case: successive time login (system time, not client time)
       elif email in unique_users:
@@ -156,14 +163,20 @@ class Parse_Data(object):
           logout_success_item = timestamp
           unique_users[email]['logout_success'].append(logout_success_item)
 
-        # validate with jsonschema, return error
-        sender   = Validate_Data(unique_users[email])
-        validate = sender.validate_data()
+        # validate 'login_xxx' properties for 'unique_users', return error
+        sender_timestamp  = Validate_Data(timestamp)
+        validate_timestamp = sender_timestamp.validate_timestamp()
 
-        if not validate:
-          error_validation = sender.get_errors()
-          print error_validation
-          return {'data': None, 'error': error_validation}
+        # validate remaining 'unique_users' properties, return error
+        sender_properties   = Validate_Data(unique_users[email])
+        validate_properties = sender_properties.validate_data()
+
+        # return error(s)
+        if not validate_timestamp and not validate_properties:
+          self.list_errors.append(sender_timestamp.get_errors())
+          self.list_errors.append(sender_properties.get_errors())
+          print self.list_errors
+          return {'data': None, 'error': self.list_errors}
 
     # return unique users login-activity metrics
     return {'data': unique_users, 'error': None}
