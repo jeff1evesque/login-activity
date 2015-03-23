@@ -22,6 +22,15 @@ class Validate_Data(object):
       self.list_errors.append(error)
       return False
 
+  ## validate_timestamp: validate login timestamps
+  def validate_timestamp(self):
+    try:
+      validate(self.data, jsonschema_timestamp())
+      return True
+    except Exception, error:
+      self.list_errors.append(error)
+      return False
+
   ## get_errors: returns appended errors
   def get_errors(self):
     return self.list_errors
