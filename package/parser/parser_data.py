@@ -102,11 +102,11 @@ class Parse_Data(object):
 
         # validate 'login_xxx' properties for 'unique_users', return error
         sender_timestamp  = Validate_Data(timestamp)
-        validate_timstamp = sender_timestamp.validate_data()
+        validate_timestamp = sender_timestamp.validate_timestamp()
 
         # validate remaining 'unique_users' properties, return error
         sender_properties   = Validate_Data(unique_users[email])
-        validate_properties = sender.validate_data()
+        validate_properties = sender_properties.validate_data()
 
         # return error(s)
         if not validate_timestamp and not validate_properties:
@@ -165,11 +165,11 @@ class Parse_Data(object):
 
         # validate 'login_xxx' properties for 'unique_users', return error
         sender_timestamp  = Validate_Data(timestamp)
-        validate_timstamp = sender_timestamp.validate_data()
+        validate_timestamp = sender_timestamp.validate_timestamp()
 
         # validate remaining 'unique_users' properties, return error
         sender_properties   = Validate_Data(unique_users[email])
-        validate_properties = sender.validate_data()
+        validate_properties = sender_properties.validate_data()
 
         # return error(s)
         if not validate_timestamp and not validate_properties:
