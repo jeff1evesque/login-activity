@@ -3,6 +3,21 @@
 ## @jsonschema_metrics.py
 #  This file contains the valid schema for the login metrics.
 
+def jsonschema_timestamp():
+  schema = {
+    'type': 'object',
+    'properties':,
+      'login_success': {
+        'items': {
+          'type': ['string', 'null'],
+          'format': 'date-time',
+          'minLength': 1
+        },
+      },
+    },
+  }
+  return schema
+
 ## jsonschema_metrics: returns the schema used to validate the login metric for
 #                      each user within the provided dataset.
 def jsonschema_metrics():
@@ -13,15 +28,6 @@ def jsonschema_metrics():
         'type': 'string',
         #'format': 'email',
         'minLength': 1
-      },
-      'login_success': {
-        'type': 'array',
-        'minItems': 1,
-        'items': {
-          'type': ['string', 'null'],
-          'format': 'date-time',
-          'minLength': 1
-        },
       },
       'login_failure': {
         'type': 'array',
