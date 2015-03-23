@@ -164,7 +164,7 @@ class Parse_Data(object):
           unique_users[email]['logout_success'].append(logout_success_item)
 
         # validate 'login_xxx' properties for 'unique_users', return error
-        sender_timestamp  = Validate_Data(timestamp)
+        sender_timestamp  = Validate_Data({'timestamp': timestamp})
         validate_timestamp = sender_timestamp.validate_timestamp()
 
         # validate remaining 'unique_users' properties, return error
