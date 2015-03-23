@@ -173,7 +173,6 @@ class Parse_Data(object):
 
         # return error(s)
         if not validate_timestamp or not validate_properties:
-          print 'jeff'
           self.list_errors.append(sender_timestamp.get_errors())
           self.list_errors.append(sender_properties.get_errors())
           print self.list_errors
