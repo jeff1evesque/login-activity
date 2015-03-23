@@ -19,8 +19,9 @@ class Parse_Data(object):
   #
   #  @self.flag_dict, the indicator whether the supplied dataset is a python dict
   def __init__(self, dataset, flag_dict=False):
-    self.dataset   = dataset
-    self.flag_dict = flag_dict
+    self.dataset     = dataset
+    self.flag_dict   = flag_dict
+    self.list_errors = []
 
   ## restructure: iterate over supplied dataset, and build a dict representation
   def restructure(self):
