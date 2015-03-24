@@ -3,7 +3,7 @@
 #      allows the presentation of (asynchronous) content.
 import json
 from flask import Flask, render_template, request
-from package.load_data import Load_Data
+from package.load_data import process_report
 
 # Initialize: create flask instance
 app = Flask(__name__)
@@ -13,18 +13,12 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/generate_report/', methods=['POST', 'GET'])
+@app.route('/generate-report/', methods=['POST', 'GET'])
 def generate_report():
   if request.method == 'POST':
-    # local variables
-    files = None
-
-    # process data
-    sender = Load_Data()
-    report = sender.get_report()
-
-    # return report
-    return json.loads(report)
+    # process, and return report
+    report = process_report()
+    return json.dumps(report)
 
 # Execute: run application directly, instead of import
 if __name__ == '__main__':

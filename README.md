@@ -5,17 +5,15 @@ Login Activity
 
 This project is a proof of concept, used to generate a report of login activities. Using a provided json file, typically stored in the [`/data/`](https://github.com/jeff1evesque/login-activity/blob/master/data/) subdirectory, a login-activity report is generated as a webpage.
 
-Specifically, the web log-activity report will contain the following metrics:
+**Metrics:** Web Report
 
 - A: the count of users that have ever logged-in
-- B: the count, of users that have logged-in the last 30 days
-- B: the count, of users that have logged-in the last 60 days
-- B: the count, of users that have logged-in the last 90 days
-- C: the percentage of users that have logged-in the last 30 days (A/B)
-- C: the percentage of users that have logged-in the last 60 days (A/B)
-- C: the percentage of users that have logged-in the last 90 days (A/B)
+- B: the count, each, of users that have logged-in the last 30, 60, 90 days (three distinct metrics)
+- C: the %, each, of users that have logged-in the last 30, 60, 90 days (calculated as B over A, as three distinct metrics)
 
-In addition to the web log-activity report, a downloadable csv link will be provided.  Specifically, each row in the csv will correspond to a user within the system, and will contain the following metrics:
+In addition to the web log-activity report, a downloadable csv link will be provided in the `/static/csv/` directory.  Each row in the file, corresponds to a user within the system.
+
+**Metrics:** CSV Report
 
 - email address
 - date & time of the last successful log-in
@@ -84,6 +82,23 @@ python app.py
 **Note:** the [`run()`](http://flask.pocoo.org/docs/0.10/api/#flask.Flask.run) method within `app.py`, runs the local developement server, and has the ability of defining the host, port, debug feature, and several other options. If none of these attributes are passed into the method, the server will default to running `localhost` on port `5000`, with no [`debug`](http://flask.pocoo.org/docs/0.10/quickstart/#debug-mode) features enabled.
 
 **Note:** when running the above `app.py`, ensure that the terminal window is not used for any other processes, while the web application is available to others.
+
+###JSON Schema
+
+[JSON Schema](https://pypi.python.org/pypi/jsonschema) provides an implementation to validate [JSON](http://en.wikipedia.org/wiki/JSON) data structures. When a specific element within the JSON structure fails validation, an [exception](https://wiki.python.org/moin/HandlingExceptions) is raised indicating the corresponding *error message*.
+
+Additional documentation:
+
+- [Understanding JSON Schema](http://spacetelescope.github.io/understanding-json-schema/)
+- [jsonschema](http://python-jsonschema.readthedocs.org/en/latest/)
+
+This project implements *JSON Schema* validation, as a backend-validation tool. Specifically, [`jsonschema_metrics.py`](https://github.com/jeff1evesque/login-activity/blob/master/package/schema/jsonschema_metrics.py) defines acceptable *schemas* to validate against, while [`validator_data.py`](https://github.com/jeff1evesque/login-activity/blob/master/package/validator/validator_data.py) implements the validation schema(s).
+
+###Dataset
+
+This project requires a structured JSON file (user-activity dataset), to be stored relative to the project directory.  Specifically, [`settings.py`](https://github.com/jeff1evesque/login-activity/blob/master/settings.py#L10) contains the filepath to the json dataset file.
+
+**Note:** [`load_data.py`](https://github.com/jeff1evesque/login-activity/blob/master/package/load_data.py#L13) implements the `LOG_ACTIVITY` filepath constant, in order to open the json file as a file-object, which allows the file to be parsed, and the user-activity report to be generated, respectively.
 
 ##Execution
 
