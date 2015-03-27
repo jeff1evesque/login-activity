@@ -117,7 +117,7 @@ class Parse_Data(object):
 
       # step case: successive time login (system time, not client time)
       elif email in unique_users:
-      
+
         # add successful login timestamp, increment counter
         if action == 'LoginSuccess':
           unique_users[email]['login_success'].append(timestamp)
@@ -125,7 +125,10 @@ class Parse_Data(object):
 
           # record first, and last time login
           datetime_instance = datetime.strptime(timestamp, '%d-%m-%Y %H:%M:%S.%f')
-          datetime_first    = datetime.strptime(unique_users[email]['login_first'], '%d-%m-%Y %H:%M:%S.%f')
+          if unique_users[email]['login_first']:
+            datetime_first = datetime.strptime(unique_users[email]['login_first'], '%d-%m-%Y %H:%M:%S.%f')
+          else:
+            datetime_first = datetime.strptime(timestamp, '%d-%m-%Y %H:%M:%S.%f')
 
           if unique_users[email]['login_last'] != None:
             datetime_last = datetime.strptime(unique_users[email]['login_last'], '%d-%m-%Y %H:%M:%S.%f')
@@ -177,6 +180,5 @@ class Parse_Data(object):
           self.list_errors.append(sender_properties.get_errors())
           print self.list_errors
           return {'data': None, 'error': self.list_errors}
-
     # return unique users login-activity metrics
     return {'data': unique_users, 'error': None}
