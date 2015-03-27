@@ -1,0 +1,294 @@
+{
+  "took" : 7012,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 12771,
+    "max_score" : null,
+    "hits" : [ {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "AfmRzimxQgqxRdJ6pZbgbA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-04T21:59:40.242Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"04-02-2015 13:59:39.620","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"mac"},"type":"Desktop"},"timestamp":"2015-02-04T21:59:39.602Z","app":"","email":"dean+au@example1.com","enterprise":"AutoDemo","headers":{"dnt":["1"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.94 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425067264547 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "7pA662uTSeC3oEdEufjqow",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T20:00:11.262Z","type":"commons","host":"tomcat03-pilot.escm.co","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 12:00:10.469","logLevel":"INFO","domain":"app","clientLog":{"action":"Logout","enterprise":"Elementum","bundleVersion":"308.175897853","app":"Transport","actionType":"button_press","category":"ui_action","formfactor":{"type":"Mobile","info":{"platform":"iOS","deviceName":"iPhone6,1","deviceId":"7830A7CD-51F4-4A84-A1A8-FF5942981F78"}},"email":"elementum-admin@example1.com","bundleShortVersion":"0.10.0","timestamp":"2015-02-27T20:00:10Z","headers":{"user-agent":["Transport/308.175897853 CFNetwork/711.1.16 Darwin/14.0.0"],"x-platform":["ios"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"166.170.38.21, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>Logout</em>" ]
+      },
+      "sort" : [ 1425067211262 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "SKyw82YaQyefk3od0yTGSw",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T20:00:11.261Z","type":"commons","host":"tomcat03-pilot.escm.co","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 12:00:10.468","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","enterprise":"Elementum","bundleVersion":"308.175897853","app":"Transport","actionType":"sign_in","category":"ui_action","formfactor":{"type":"Mobile","info":{"platform":"iOS","deviceName":"iPhone6,1","deviceId":"7830A7CD-51F4-4A84-A1A8-FF5942981F78"}},"email":"elementum-admin@example1.com","bundleShortVersion":"0.10.0","timestamp":"2015-02-27T20:00:03Z","headers":{"user-agent":["Transport/308.175897853 CFNetwork/711.1.16 Darwin/14.0.0"],"x-platform":["ios"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"166.170.38.21, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425067211261 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "uQ0zS1LXTtWmWUyPigjpfQ",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T19:32:53.170Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 11:32:52.486","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"mac"},"type":"Desktop"},"timestamp":"2015-02-27T19:32:57.413Z","app":"","email":"olivier+larman@example1.com","enterprise":"larman","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiRHlzb24iLCJ1c2VyQmlkIjoib2xpdmllcitkeXNvbkBlbGVtZW50dW0uY29tIiwiY29udGFjdCI6eyJsYXN0TmFtZSI6IkJvdWFuIiwiZmlyc3ROYW1lIjoiT2xpdmllciJ9LCJhcHBsaWNhdGlvbnMiOlsidHJhbnNwb3J0Il0sInByZWZlcmVuY2VzIjp7ImRpc3BsYXlEYXRlRm9ybWF0IjoiSVNPXzg2MDFfREFURSIsImRpc3BsYXlUaW1lRm9ybWF0IjoiVFdFTFZFX0hPVVIiLCJkaXNwbGF5VGltZXpvbmUiOiJQU1Q4UERUIiwiZGlzcGxheURlY2ltYWxTZXBhcmF0b3IiOiJET1QiLCJkaXNwbGF5VGhvdXNhbmR0aHNTZXBhcmF0b3IiOiJDT01NQSJ9LCJpYXQiOjE0MjUwNTg3MjcsImV4cCI6MTQyNzY1MDcyN30.2YpdNQThVMczATKFlOQG1dCwIjA_xItNb0l0KKv1owM"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425065573170 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "uOirN9HETYiy8ObLkakaKQ",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T19:31:54.157Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 11:31:54.016","logLevel":"INFO","domain":"app","clientLog":{"action":"Logout","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"safari","deviceOs":"mac"},"type":"Desktop"},"timestamp":"2015-02-27T19:31:53.911Z","app":"Manufacture","email":"spt+gopro@example1.com","enterprise":"GoPro","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiR29Qcm8iLCJ1c2VyQmlkIjoic3VwcG9ydCtnb3Byb0BlbGVtZW50dW0uY29tIiwiY29udGFjdCI6eyJsYXN0TmFtZSI6IlN1cHBvcnQiLCJmaXJzdE5hbWUiOiJHb1BybyJ9LCJhcHBsaWNhdGlvbnMiOlsibWFudWZhY3R1cmUiLCJ0cmFuc3BvcnQiLCJleHBvc3VyZSJdLCJwcmVmZXJlbmNlcyI6eyJkaXNwbGF5RGF0ZUZvcm1hdCI6IklTT184NjAxX0RBVEUiLCJkaXNwbGF5VGltZUZvcm1hdCI6IlRXRUxWRV9IT1VSIiwiZGlzcGxheVRpbWV6b25lIjoiUFNUOFBEVCIsImRpc3BsYXlEZWNpbWFsU2VwYXJhdG9yIjoiRE9UIiwiZGlzcGxheVRob3VzYW5kdGhzU2VwYXJhdG9yIjoiQ09NTUEifSwiaWF0IjoxNDI1MDY1MzE3LCJleHAiOjE0Mjc2NTczMTd9.68kttH0RvGake--q4I1A1J-IrTA_LSL52Fd7YUD86zc"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/manufacture/product/HERO4?site=Sorocaba&kpiType=OUTPUT&category=CAMERAS"],"user-agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>Logout</em>" ]
+      },
+      "sort" : [ 1425065514157 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "NSEtcctxSIK_3SwlgNCJDA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T19:30:43.257Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 11:30:43.241","logLevel":"INFO","domain":"app","clientLog":{"actionType":"button_press","app":"Exposure","category":"ui_action","enterprise":"bicycle-shop-demo","bundleVersion":"1165.126637797","bundleShortVersion":"1.0.0","email":"biker@example1.com","timestamp":"2015-02-27T19:30:44Z","action":"Logout","formfactor":{"type":"Mobile","info":{"platform":"iOS","deviceId":"793CE693-7CCB-4747-A205-1BF7CB1B8A92","deviceName":"iPhone5,1"}},"headers":{"user-agent":["Exposure/1165.126637797 CFNetwork/711.1.16 Darwin/14.0.0"],"x-platform":["ios"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>Logout</em>" ]
+      },
+      "sort" : [ 1425065443257 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "a2HFypZjRZSUD02hBVjILQ",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T19:10:36.941Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 11:10:36.380","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","bundleShortVersion":"0.9.6-DEBUG (2160.76202240)","bundleVersion":"9","category":"ui_action","formfactor":{"info":{"deviceId":"9a938468dc35ffa7","deviceName":"SM-N9005","platform":"Android"},"type":"Mobile"},"timestamp":"2015-02-27T19:09:27Z","app":"exposure","email":"gadimurthy@example1.com","enterprise":"bicycle-shop-demo","headers":{"user-agent":["okhttp/2.2.0"],"x-platform":["android"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425064236941 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "LRcTobwfQr2TC04HfzDaFA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T19:01:42.683Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 11:01:41.775","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"mac"},"type":"Desktop"},"timestamp":"2015-02-27T19:01:41.683Z","app":"","email":"dean-fast@example1.com","enterprise":"fastronics","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiQW5oZXVzZXItQnVzY2giLCJ1c2VyQmlkIjoiZGVhbithYkBlbGVtZW50dW0uY29tIiwiY29udGFjdCI6eyJsYXN0TmFtZSI6IkFCIiwiZmlyc3ROYW1lIjoiRGVhbiJ9LCJhcHBsaWNhdGlvbnMiOlsidHJhbnNwb3J0Il0sInByZWZlcmVuY2VzIjp7ImRpc3BsYXlEYXRlRm9ybWF0IjoiSVNPXzg2MDFfREFURSIsImRpc3BsYXlUaW1lRm9ybWF0IjoiVFdFTFZFX0hPVVIiLCJkaXNwbGF5VGltZXpvbmUiOiJQU1Q4UERUIiwiZGlzcGxheURlY2ltYWxTZXBhcmF0b3IiOiJET1QiLCJkaXNwbGF5VGhvdXNhbmR0aHNTZXBhcmF0b3IiOiJDT01NQSJ9LCJpYXQiOjE0MjQ5MDAzNDYsImV4cCI6MTQyNzQ5MjM0Nn0.2DlE6T72AKTC8xbMnODNgQCy2IwebGljahmjkWNSkpw"],"dnt":["1"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425063702683 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "fdmWRQEkRtihm3D2vml6BQ",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T18:45:56.605Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 10:45:55.708","logLevel":"INFO","domain":"app","clientLog":{"action":"Logout","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"mac"},"type":"Desktop"},"timestamp":"2015-02-27T18:45:55.175Z","app":"Manufacture","email":"abhijit+larman@example1.com","enterprise":"larman","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiRHlzb24iLCJ1c2VyQmlkIjoiYWJoaWppdCtkeXNvbkBlbGVtZW50dW0uY29tIiwiY29udGFjdCI6eyJsYXN0TmFtZSI6Ikt1bGthcm5pIFtEeXNvbl0iLCJmaXJzdE5hbWUiOiJBYmhpaml0In0sImFwcGxpY2F0aW9ucyI6WyJtYW51ZmFjdHVyZSJdLCJwcmVmZXJlbmNlcyI6eyJkaXNwbGF5RGF0ZUZvcm1hdCI6IklTT184NjAxX0RBVEUiLCJkaXNwbGF5VGltZUZvcm1hdCI6IlRXRUxWRV9IT1VSIiwiZGlzcGxheVRpbWV6b25lIjoiUFNUOFBEVCIsImRpc3BsYXlEZWNpbWFsU2VwYXJhdG9yIjoiRE9UIiwiZGlzcGxheVRob3VzYW5kdGhzU2VwYXJhdG9yIjoiQ09NTUEifSwiaWF0IjoxNDI1MDYwNjUyLCJleHAiOjE0Mjc2NTI2NTJ9.Ax1r0oFDdh66Cf39iyIwa9xNOGlZEdBFiGsVuel0N4Y"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/manufacture/production/Handheld?site=Skudai"],"user-agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>Logout</em>" ]
+      },
+      "sort" : [ 1425062756605 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "4UXK71s6TCSZi7FHAekJ3Q",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T18:20:34.149Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 10:20:33.830","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","bundleShortVersion":"0.10.1-DEBUG (1462.251007284)","bundleVersion":"10","category":"ui_action","formfactor":{"info":{"deviceId":"55712cc3cc1394ec","deviceName":"Nexus 6","platform":"Android"},"type":"Mobile"},"timestamp":"2015-02-27T18:19:55Z","app":"Transport","email":"olivier+larman@example1.com","enterprise":"larman","headers":{"user-agent":["Dalvik/2.1.0 (Linux; U; Android 5.0.1; Nexus 6 Build/LRX22C)"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425061234149 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "SJ2-TYVwTvSjNC7y6Wsr9w",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T18:20:34.149Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 10:20:33.829","logLevel":"INFO","domain":"app","clientLog":{"action":"Logout","actionType":"button_press","bundleShortVersion":"0.10.1-DEBUG (1462.251007284)","bundleVersion":"10","category":"ui_action","formfactor":{"info":{"deviceId":"55712cc3cc1394ec","deviceName":"Nexus 6","platform":"Android"},"type":"Mobile"},"timestamp":"2015-02-27T18:19:40Z","app":"Transport","email":"olivier+larman@example1.com","enterprise":"larman","headers":{"user-agent":["Dalvik/2.1.0 (Linux; U; Android 5.0.1; Nexus 6 Build/LRX22C)"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>Logout</em>" ]
+      },
+      "sort" : [ 1425061234149 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "LhpleBHzSQq4rvkQ8JrRSw",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T18:07:15.930Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 10:07:15.378","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"mac"},"type":"Desktop"},"timestamp":"2015-02-27T18:07:15.960Z","app":"","email":"abhijit+larman@example1.com","enterprise":"larman","headers":{"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425060435930 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "bhOoonf8Qi2aPZJ_eBC4tA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T17:56:52.927Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 09:56:52.255","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"mac"},"type":"Desktop"},"timestamp":"2015-02-27T17:56:52.275Z","app":"","email":"spt+larman@example1.com","enterprise":"larman","headers":{"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425059812927 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "wXhDNUuhRHCcj8mXXzuZHw",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T17:56:52.778Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 09:56:52.364","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginFailure","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"mac"},"type":"Desktop"},"timestamp":"2015-02-27T17:56:52.269Z","app":"","email":"spt+larman@example1.com","enterprise":"larman","headers":{"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginFailure</em>" ]
+      },
+      "sort" : [ 1425059812778 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "m0GhusrlRYmU1EaIFs_a3A",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T17:27:57.443Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 09:27:57.338","logLevel":"INFO","domain":"app","clientLog":{"actionType":"sign_in","app":"Exposure","category":"ui_action","enterprise":"fastronics","bundleVersion":"1062.19399274","bundleShortVersion":"0.9.6","email":"spt+fast@example1.com","timestamp":"2015-02-27T17:27:14Z","action":"LoginSuccess","formfactor":{"type":"Mobile","info":{"platform":"iOS","deviceId":"AC1CDD3D-803D-4B53-A2A9-D72D077961A4","deviceName":"iPhone5,1"}},"headers":{"user-agent":["Exposure/1062.19399274 CFNetwork/711.1.16 Darwin/14.0.0"],"x-platform":["ios"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425058077443 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "quMehaanR9m7DU5cmUmroA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T17:27:14.554Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 09:27:14.403","logLevel":"INFO","domain":"app","clientLog":{"actionType":"sign_in","app":"Exposure","category":"ui_action","enterprise":"fastronics","bundleVersion":"1062.19399274","bundleShortVersion":"0.9.6","email":"mike.mcnamara@fastronics.com","timestamp":"2015-02-27T17:26:14Z","action":"LoginFailure","data":{"errorCode":"UserNotAuthorizedForApp"},"formfactor":{"type":"Mobile","info":{"platform":"iOS","deviceId":"AC1CDD3D-803D-4B53-A2A9-D72D077961A4","deviceName":"iPhone5,1"}},"headers":{"user-agent":["Exposure/1062.19399274 CFNetwork/711.1.16 Darwin/14.0.0"],"x-platform":["ios"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginFailure</em>" ]
+      },
+      "sort" : [ 1425058034554 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "pMI7bbtYRgOyIJfpN6hgoA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T17:27:14.554Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 09:27:14.404","logLevel":"INFO","domain":"app","clientLog":{"actionType":"sign_in","app":"Exposure","category":"ui_action","enterprise":"fastronics","bundleVersion":"1062.19399274","bundleShortVersion":"0.9.6","email":"mike.mcnamara@fastronics.com","timestamp":"2015-02-27T17:27:03Z","action":"LoginFailure","data":{"errorCode":"UserNotAuthorizedForApp"},"formfactor":{"type":"Mobile","info":{"platform":"iOS","deviceId":"AC1CDD3D-803D-4B53-A2A9-D72D077961A4","deviceName":"iPhone5,1"}},"headers":{"user-agent":["Exposure/1062.19399274 CFNetwork/711.1.16 Darwin/14.0.0"],"x-platform":["ios"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginFailure</em>" ]
+      },
+      "sort" : [ 1425058034554 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "j663_zKhQ3iFEWDbC70w8g",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T17:27:14.554Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 09:27:14.403","logLevel":"INFO","domain":"app","clientLog":{"actionType":"sign_in","app":"Exposure","category":"ui_action","enterprise":"fastronics","bundleVersion":"1062.19399274","bundleShortVersion":"0.9.6","email":"mike.mcnamara@fastronics.com","timestamp":"2015-02-27T17:25:55Z","action":"LoginFailure","data":{"errorCode":"UserNotAuthorizedForApp"},"formfactor":{"type":"Mobile","info":{"platform":"iOS","deviceId":"AC1CDD3D-803D-4B53-A2A9-D72D077961A4","deviceName":"iPhone5,1"}},"headers":{"user-agent":["Exposure/1062.19399274 CFNetwork/711.1.16 Darwin/14.0.0"],"x-platform":["ios"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginFailure</em>" ]
+      },
+      "sort" : [ 1425058034554 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "Lsemvd82TCaz0WPPYs-9mA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T17:27:14.554Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 09:27:14.403","logLevel":"INFO","domain":"app","clientLog":{"actionType":"sign_in","app":"Exposure","category":"ui_action","enterprise":"fastronics","bundleVersion":"1062.19399274","bundleShortVersion":"0.9.6","email":"mike.mcnamara@fastronics.com","timestamp":"2015-02-27T17:26:53Z","action":"LoginFailure","data":{"errorCode":"UserNotAuthorizedForApp"},"formfactor":{"type":"Mobile","info":{"platform":"iOS","deviceId":"AC1CDD3D-803D-4B53-A2A9-D72D077961A4","deviceName":"iPhone5,1"}},"headers":{"user-agent":["Exposure/1062.19399274 CFNetwork/711.1.16 Darwin/14.0.0"],"x-platform":["ios"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"64.124.200.2, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginFailure</em>" ]
+      },
+      "sort" : [ 1425058034554 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "fpLm6TpMSlCVTON0cIZhpA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T17:14:43.291Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 09:14:42.637","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","bundleShortVersion":"0.9.6 (1881.127122763)","bundleVersion":"9","category":"ui_action","formfactor":{"info":{"deviceId":"4001112f411fc358","deviceName":"LG-D415","platform":"Android"},"type":"Mobile"},"timestamp":"2015-02-27T17:13:59Z","app":"exposure","email":"mbeckste@example-kpr-org.com","enterprise":"JNJ_10001","headers":{"user-agent":["Dalvik/1.6.0 (Linux; U; Android 4.4.2; LG-D415 Build/KOT49I.D41510e)"],"x-platform":["android"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"148.177.1.216, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425057283291 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "hBpSuJ-8R1Krd_9t1MfwYw",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T16:44:06.913Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 08:44:06.258","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"windows"},"type":"Desktop"},"timestamp":"2015-02-27T16:44:05.762Z","app":"","email":"emily.evans@larman.com","enterprise":"larman","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiRHlzb24iLCJ1c2VyQmlkIjoiZW1pbHkuZXZhbnNAZHlzb24uY29tIiwiY29udGFjdCI6eyJsYXN0TmFtZSI6IkV2YW5zIiwiZmlyc3ROYW1lIjoiRW1pbHkifSwiYXBwbGljYXRpb25zIjpbInRyYW5zcG9ydCJdLCJwcmVmZXJlbmNlcyI6eyJkaXNwbGF5RGF0ZUZvcm1hdCI6IklTT184NjAxX0RBVEUiLCJkaXNwbGF5VGltZUZvcm1hdCI6IlRXRUxWRV9IT1VSIiwiZGlzcGxheVRpbWV6b25lIjoiUFNUOFBEVCIsImRpc3BsYXlEZWNpbWFsU2VwYXJhdG9yIjoiRE9UIiwiZGlzcGxheVRob3VzYW5kdGhzU2VwYXJhdG9yIjoiQ09NTUEifSwiaWF0IjoxNDI0ODg0ODMyLCJleHAiOjE0Mjc0NzY4MzJ9.vAsnDNy2wzDWB_z1IgJL34mGEBukZMLpmRdfQyfA25o"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/transport?isAdvancedFilterNotActive=true"],"user-agent":["Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 63.84.24.36, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425055446913 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "7Y6-WthZRoSCNGr-S7rmkw",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T16:36:03.801Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 08:36:02.830","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"windows"},"type":"Desktop"},"timestamp":"2015-02-27T16:36:03.978Z","app":"","email":"precious.silva@example-b-inter.com","enterprise":"elementum-eec","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiZWxlbWVudHVtLWVlYyIsInVzZXJCaWQiOiJwcmVjaW91cy5zaWx2YUBib2x0b25pbnRlcm5hdGlvbmFsLmNvbSIsImNvbnRhY3QiOnsibGFzdE5hbWUiOiJTaWx2YSIsImZpcnN0TmFtZSI6IlByZWNpb3VzIn0sImFwcGxpY2F0aW9ucyI6WyJlZWMiXSwicHJlZmVyZW5jZXMiOnsiZGlzcGxheURhdGVGb3JtYXQiOiJJU09fODYwMV9EQVRFIiwiZGlzcGxheVRpbWVGb3JtYXQiOiJUV0VMVkVfSE9VUiIsImRpc3BsYXlUaW1lem9uZSI6IkFzaWEvTWFuaWxhIiwiZGlzcGxheURlY2ltYWxTZXBhcmF0b3IiOiJET1QiLCJkaXNwbGF5VGhvdXNhbmR0aHNTZXBhcmF0b3IiOiJDT01NQSJ9LCJpYXQiOjE0MjQ5OTM3ODYsImV4cCI6MTQyNzU4NTc4Nn0.WAFOQk8vc3wamVgivnDguv6IpJ9SveEpue3FQWQ0HLs"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 122.53.135.130, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425054963801 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "0DToverOQzOkDzn6v9LdlA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T16:14:34.542Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 08:14:33.682","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"firefox","deviceOs":"windows"},"type":"Desktop"},"timestamp":"2015-02-27T16:14:33.586Z","app":"","email":"bryan.pollard@veracitywireless.com","enterprise":"VRZ_10014","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiVlJaXzEwMDE0IiwidXNlckJpZCI6ImJyeWFuLnBvbGxhcmRAdmVyaXpvbndpcmVsZXNzLmNvbSIsImNvbnRhY3QiOnsibGFzdE5hbWUiOiJQb2xsYXJkIiwiZmlyc3ROYW1lIjoiQnJ5YW4ifSwiYXBwbGljYXRpb25zIjpbImV4cG9zdXJlIl0sInByZWZlcmVuY2VzIjp7ImRpc3BsYXlEYXRlRm9ybWF0IjoiSVNPXzg2MDFfREFURSIsImRpc3BsYXlUaW1lRm9ybWF0IjoiVFdFTFZFX0hPVVIiLCJkaXNwbGF5VGltZXpvbmUiOiJQU1Q4UERUIiwiZGlzcGxheURlY2ltYWxTZXBhcmF0b3IiOiJET1QiLCJkaXNwbGF5VGhvdXNhbmR0aHNTZXBhcmF0b3IiOiJDT01NQSJ9LCJpYXQiOjE0MjQ4MDk1OTMsImV4cCI6MTQyNzQwMTU5M30.5jcbY6bf03b04AZH_0m_YI7AuM2VznIARdpBG6nMLTA"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Windows NT 6.1; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 162.115.236.103, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425053674542 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "9PVYGqFfTEK8pN3KOrTKhg",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T15:35:46.224Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 07:35:46.178","logLevel":"INFO","domain":"app","clientLog":{"action":"Logout","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"windows"},"type":"Desktop"},"timestamp":"2015-02-27T15:35:46.888Z","app":"Eec","email":"raine.grey@example-b-inter.com","enterprise":"elementum-eec","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiZWxlbWVudHVtLWVlYyIsInVzZXJCaWQiOiJyYWluZS5ncmV5QGJvbHRvbmludGVybmF0aW9uYWwuY29tIiwiY29udGFjdCI6eyJsYXN0TmFtZSI6IkdyZXkiLCJmaXJzdE5hbWUiOiJSYWluZSJ9LCJhcHBsaWNhdGlvbnMiOlsiZWVjIl0sInByZWZlcmVuY2VzIjp7ImRpc3BsYXlEYXRlRm9ybWF0IjoiSVNPXzg2MDFfREFURSIsImRpc3BsYXlUaW1lRm9ybWF0IjoiVFdFTFZFX0hPVVIiLCJkaXNwbGF5VGltZXpvbmUiOiJBc2lhL01hbmlsYSIsImRpc3BsYXlEZWNpbWFsU2VwYXJhdG9yIjoiRE9UIiwiZGlzcGxheVRob3VzYW5kdGhzU2VwYXJhdG9yIjoiQ09NTUEifSwiaWF0IjoxNDI1MDM1NDg5LCJleHAiOjE0Mjc2Mjc0ODl9.Cg-WzkqaztOD17sPgUFKYsQQSpViHHjCxlL34Avc_eI"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/eec"],"user-agent":["Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 122.53.135.130, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>Logout</em>" ]
+      },
+      "sort" : [ 1425051346224 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "n8df9WlfSNSyP7hiGibDjQ",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T15:15:14.996Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 07:15:14.522","logLevel":"INFO","domain":"app","clientLog":{"action":"Logout","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"windows"},"type":"Desktop"},"timestamp":"2015-02-27T15:15:14.280Z","app":"Exposure","email":"lisa.a.taylor@corman.com","enterprise":"corman","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiQ292aWRpZW4iLCJ1c2VyQmlkIjoibGlzYS5hLnRheWxvckBjb3ZpZGllbi5jb20iLCJjb250YWN0Ijp7Imxhc3ROYW1lIjoiVGF5bG9yIiwiZmlyc3ROYW1lIjoiTGlzYSJ9LCJhcHBsaWNhdGlvbnMiOlsiZXhwb3N1cmUiXSwicHJlZmVyZW5jZXMiOnsiZGlzcGxheURhdGVGb3JtYXQiOiJJU09fODYwMV9EQVRFIiwiZGlzcGxheVRpbWVGb3JtYXQiOiJUV0VMVkVfSE9VUiIsImRpc3BsYXlUaW1lem9uZSI6IlBTVDhQRFQiLCJkaXNwbGF5RGVjaW1hbFNlcGFyYXRvciI6IkRPVCIsImRpc3BsYXlUaG91c2FuZHRoc1NlcGFyYXRvciI6IkNPTU1BIn0sImlhdCI6MTQyNTA0OTk4NCwiZXhwIjoxNDI3NjQxOTg0fQ.w5yMOilAS-Sy4qr0nEimMiUMkYQwNTSzsa-uFAa2ESY"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/exposure/feed"],"user-agent":["Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"via":["HTTPS/1.1 localhost.localdomain 0A50FF12"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"216.75.211.6, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>Logout</em>" ]
+      },
+      "sort" : [ 1425050114996 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "2ucjcn9ZRXWt1VuiC_bd-w",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T15:13:04.670Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 07:13:04.534","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"windows"},"type":"Desktop"},"timestamp":"2015-02-27T15:13:04.434Z","app":"","email":"lisa.a.taylor@corman.com","enterprise":"corman","headers":{"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"via":["HTTPS/1.1 localhost.localdomain 0A50FF14"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"216.75.211.8, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425049984670 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "cTcKIjBlQeOEaOv3Rpe0bg",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T13:37:31.857Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 05:37:31.726","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"safari","deviceOs":"mac"},"type":"Desktop"},"timestamp":"2015-02-27T13:37:31.271Z","app":"","email":"spt+gopro@example1.com","enterprise":"GoPro","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiR29Qcm8iLCJ1c2VyQmlkIjoic3VwcG9ydCtnb3Byb0BlbGVtZW50dW0uY29tIiwiY29udGFjdCI6eyJsYXN0TmFtZSI6IlN1cHBvcnQiLCJmaXJzdE5hbWUiOiJHb1BybyJ9LCJhcHBsaWNhdGlvbnMiOlsibWFudWZhY3R1cmUiLCJ0cmFuc3BvcnQiLCJleHBvc3VyZSJdLCJwcmVmZXJlbmNlcyI6eyJkaXNwbGF5RGF0ZUZvcm1hdCI6IklTT184NjAxX0RBVEUiLCJkaXNwbGF5VGltZUZvcm1hdCI6IlRXRUxWRV9IT1VSIiwiZGlzcGxheVRpbWV6b25lIjoiUFNUOFBEVCIsImRpc3BsYXlEZWNpbWFsU2VwYXJhdG9yIjoiRE9UIiwiZGlzcGxheVRob3VzYW5kdGhzU2VwYXJhdG9yIjoiQ09NTUEifSwiaWF0IjoxNDI1MDEyNzM2LCJleHAiOjE0Mjc2MDQ3MzZ9.PjuFZP1OzNZyNs553Jk68TNPkttQcVxYznXNhRz8Ne8"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/"],"user-agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 67.161.8.4, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425044251857 ]
+    }, {
+      "_index" : "app",
+      "_type" : "app",
+      "_id" : "Aw5FbUxTSCGotVtSgyGiUA",
+      "_score" : null,
+      "_source":{"@version":"1","@timestamp":"2015-02-27T12:43:38.302Z","type":"commons","host":"prod-instance-one.internal.com","path":"/var/log/applogs/commons-resource.log","timestamp":"27-02-2015 04:43:37.713","logLevel":"INFO","domain":"app","clientLog":{"action":"LoginSuccess","actionType":"button_press","category":"ui_action","formfactor":{"info":{"platform":"Web","deviceId":"unknown","deviceName":"chrome","deviceOs":"windows"},"type":"Desktop"},"timestamp":"2015-02-27T12:43:37.525Z","app":"","email":"tnelen@example-kpr-org.com","enterprise":"JNJ_10001","headers":{"auth-token":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnRlcnByaXNlQmlkIjoiSk5KXzEwMDAxIiwidXNlckJpZCI6InRuZWxlbkBpdHMuam5qLmNvbSIsImNvbnRhY3QiOnsibGFzdE5hbWUiOiJOZWxlbiIsImZpcnN0TmFtZSI6IlRvbm55In0sImFwcGxpY2F0aW9ucyI6WyJleHBvc3VyZSJdLCJwcmVmZXJlbmNlcyI6eyJkaXNwbGF5RGF0ZUZvcm1hdCI6IklTT184NjAxX0RBVEUiLCJkaXNwbGF5VGltZUZvcm1hdCI6IlRXRUxWRV9IT1VSIiwiZGlzcGxheVRpbWV6b25lIjoiUFNUOFBEVCIsImRpc3BsYXlEZWNpbWFsU2VwYXJhdG9yIjoiRE9UIiwiZGlzcGxheVRob3VzYW5kdGhzU2VwYXJhdG9yIjoiQ09NTUEifSwiaWF0IjoxNDI0OTYyOTIyLCJleHAiOjE0Mjc1NTQ5MjJ9.cZxGzEKrwhLOAkokATHyIMjoKhXGsrM0_UppJZPBzjo"],"origin":["https://apps.example1.com"],"referer":["https://apps.example1.com/exposure/feed"],"user-agent":["Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"],"x-forwarded-port":["80"],"x-forwarded-proto":["http"]},"remoteAddress":"apps.example1.com, 148.177.129.212, 107.21.9.233","geoLocation":null}},
+      "highlight" : {
+        "clientLog.action" : [ "<em>LoginSuccess</em>" ]
+      },
+      "sort" : [ 1425041018302 ]
+    } ]
+  }
+}
