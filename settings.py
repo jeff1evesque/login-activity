@@ -7,4 +7,6 @@
 import os
 
 APP_ROOT     = os.path.dirname(os.path.abspath(__file__))
-LOG_ACTIVITY = os.path.realpath(os.path.join(APP_ROOT, 'data/user-activity-example-feed.json'))
+LOG_ACTIVITY = os.path.realpath(os.path.join(APP_ROOT, 'data/large_dataset.json'))
+#LOG_ACTIVITY = os.path.realpath(os.path.join(APP_ROOT, 'data/medium_dataset.json'))
+#LOG_ACTIVITY = os.path.realpath(os.path.join(APP_ROOT, 'data/small_dataset.json'))
